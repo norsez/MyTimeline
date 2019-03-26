@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+//        let realm = try! Realm()
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
+//        
+//        var post = Post()
+//        post.body = "Hello. This is my first post."
+//        post.images = [UIImage(named: "red")!]
+//        try! realm.write {
+//            realm.add(post)
+//        }
+        
         return true
     }
 

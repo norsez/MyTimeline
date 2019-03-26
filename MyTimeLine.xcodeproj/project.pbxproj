@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27F03E2218F60C69AEA01911 /* Pods_MyTimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */; };
+		783023161EBAA6B8C4703339 /* Pods_MyTimeLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */; };
 		F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF01922498D050004F265 /* AppDelegate.swift */; };
-		F39FF01C22498D050004F265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF01B22498D050004F265 /* ViewController.swift */; };
 		F39FF01F22498D050004F265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF01D22498D050004F265 /* Main.storyboard */; };
 		F39FF02122498D070004F265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02022498D070004F265 /* Assets.xcassets */; };
 		F39FF02422498D070004F265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02222498D070004F265 /* LaunchScreen.storyboard */; };
 		F39FF02F22498D070004F265 /* MyTimeLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF02E22498D070004F265 /* MyTimeLineTests.swift */; };
+		F39FF03A22498D2D0004F265 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F39FF03922498D2D0004F265 /* Podfile */; };
+		F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF03B2249990C0004F265 /* TimelineViewController.swift */; };
+		F39FF040224999540004F265 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF03F224999540004F265 /* PostViewController.swift */; };
+		F39FF04222499A0C0004F265 /* TimelineViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F39FF04122499A0C0004F265 /* TimelineViewCell.xib */; };
+		F39FF04422499A1C0004F265 /* TimelineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF04322499A1C0004F265 /* TimelineViewCell.swift */; };
+		F39FF0472249B0EE0004F265 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF0462249B0EE0004F265 /* Post.swift */; };
+		F3BABB662249B77400E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
+		F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB672249B8DA00E618DC /* TestUtils.swift */; };
+		F3BABB692249B96000E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17A06A68426E5586C2A5DCBF /* Pods-MyTimeLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		61845C25B76B4A06CE1CA581 /* Pods-MyTimeLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.debug.xcconfig"; sourceTree = "<group>"; };
+		6691F4FEAD55239BE50E069E /* Pods-MyTimeLineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.release.xcconfig"; sourceTree = "<group>"; };
+		75C3B4C5BF2C1064A9633B09 /* Pods-MyTimeLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.release.xcconfig"; sourceTree = "<group>"; };
+		AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01622498D050004F265 /* MyTimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01922498D050004F265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F39FF01B22498D050004F265 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F39FF01E22498D050004F265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F39FF02022498D070004F265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F39FF02322498D070004F265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +51,14 @@
 		F39FF02A22498D070004F265 /* MyTimeLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF02E22498D070004F265 /* MyTimeLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLineTests.swift; sourceTree = "<group>"; };
 		F39FF03022498D070004F265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F39FF03922498D2D0004F265 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F39FF03B2249990C0004F265 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		F39FF03F224999540004F265 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		F39FF04122499A0C0004F265 /* TimelineViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineViewCell.xib; sourceTree = "<group>"; };
+		F39FF04322499A1C0004F265 /* TimelineViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewCell.swift; sourceTree = "<group>"; };
+		F39FF0462249B0EE0004F265 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F3BABB652249B77400E618DC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F3BABB672249B8DA00E618DC /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F03E2218F60C69AEA01911 /* Pods_MyTimeLine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +74,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783023161EBAA6B8C4703339 /* Pods_MyTimeLineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AA8F19092BDAB926BCFEB95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61845C25B76B4A06CE1CA581 /* Pods-MyTimeLine.debug.xcconfig */,
+				75C3B4C5BF2C1064A9633B09 /* Pods-MyTimeLine.release.xcconfig */,
+				17A06A68426E5586C2A5DCBF /* Pods-MyTimeLineTests.debug.xcconfig */,
+				6691F4FEAD55239BE50E069E /* Pods-MyTimeLineTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB7122E7BC6EDDA6C82E605C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */,
+				BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F39FF00D22498D050004F265 = {
 			isa = PBXGroup;
 			children = (
 				F39FF01822498D050004F265 /* MyTimeLine */,
 				F39FF02D22498D070004F265 /* MyTimeLineTests */,
 				F39FF01722498D050004F265 /* Products */,
+				F39FF03922498D2D0004F265 /* Podfile */,
+				5AA8F19092BDAB926BCFEB95 /* Pods */,
+				CB7122E7BC6EDDA6C82E605C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				F39FF01922498D050004F265 /* AppDelegate.swift */,
-				F39FF01B22498D050004F265 /* ViewController.swift */,
+				F39FF0452249B0DA0004F265 /* models */,
+				F39FF03E2249991E0004F265 /* views */,
 				F39FF01D22498D050004F265 /* Main.storyboard */,
 				F39FF02022498D070004F265 /* Assets.xcassets */,
 				F39FF02222498D070004F265 /* LaunchScreen.storyboard */,
@@ -90,10 +139,31 @@
 		F39FF02D22498D070004F265 /* MyTimeLineTests */ = {
 			isa = PBXGroup;
 			children = (
+				F3BABB672249B8DA00E618DC /* TestUtils.swift */,
 				F39FF02E22498D070004F265 /* MyTimeLineTests.swift */,
 				F39FF03022498D070004F265 /* Info.plist */,
 			);
 			path = MyTimeLineTests;
+			sourceTree = "<group>";
+		};
+		F39FF03E2249991E0004F265 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F39FF03B2249990C0004F265 /* TimelineViewController.swift */,
+				F39FF03F224999540004F265 /* PostViewController.swift */,
+				F39FF04122499A0C0004F265 /* TimelineViewCell.xib */,
+				F39FF04322499A1C0004F265 /* TimelineViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		F39FF0452249B0DA0004F265 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F39FF0462249B0EE0004F265 /* Post.swift */,
+				F3BABB652249B77400E618DC /* Utils.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F39FF03322498D070004F265 /* Build configuration list for PBXNativeTarget "MyTimeLine" */;
 			buildPhases = (
+				988AF35690FF572E2F8426CD /* [CP] Check Pods Manifest.lock */,
 				F39FF01222498D050004F265 /* Sources */,
 				F39FF01322498D050004F265 /* Frameworks */,
 				F39FF01422498D050004F265 /* Resources */,
+				ECE4C0F203F0E2B363BC1E3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F39FF03622498D070004F265 /* Build configuration list for PBXNativeTarget "MyTimeLineTests" */;
 			buildPhases = (
+				5BED3B2B51B9120FBD8BD41B /* [CP] Check Pods Manifest.lock */,
 				F39FF02622498D070004F265 /* Sources */,
 				F39FF02722498D070004F265 /* Frameworks */,
 				F39FF02822498D070004F265 /* Resources */,
@@ -179,6 +252,8 @@
 			files = (
 				F39FF02422498D070004F265 /* LaunchScreen.storyboard in Resources */,
 				F39FF02122498D070004F265 /* Assets.xcassets in Resources */,
+				F39FF03A22498D2D0004F265 /* Podfile in Resources */,
+				F39FF04222499A0C0004F265 /* TimelineViewCell.xib in Resources */,
 				F39FF01F22498D050004F265 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,13 +267,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BED3B2B51B9120FBD8BD41B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTimeLineTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		988AF35690FF572E2F8426CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTimeLine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE4C0F203F0E2B363BC1E3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F39FF01222498D050004F265 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39FF01C22498D050004F265 /* ViewController.swift in Sources */,
 				F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */,
+				F39FF040224999540004F265 /* PostViewController.swift in Sources */,
+				F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */,
+				F39FF04422499A1C0004F265 /* TimelineViewCell.swift in Sources */,
+				F39FF0472249B0EE0004F265 /* Post.swift in Sources */,
+				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +355,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F39FF02F22498D070004F265 /* MyTimeLineTests.swift in Sources */,
+				F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */,
+				F3BABB692249B96000E618DC /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +508,7 @@
 		};
 		F39FF03422498D070004F265 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61845C25B76B4A06CE1CA581 /* Pods-MyTimeLine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +527,7 @@
 		};
 		F39FF03522498D070004F265 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C3B4C5BF2C1064A9633B09 /* Pods-MyTimeLine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +546,7 @@
 		};
 		F39FF03722498D070004F265 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17A06A68426E5586C2A5DCBF /* Pods-MyTimeLineTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +568,7 @@
 		};
 		F39FF03822498D070004F265 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6691F4FEAD55239BE50E069E /* Pods-MyTimeLineTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
