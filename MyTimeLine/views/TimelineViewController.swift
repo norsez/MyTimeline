@@ -27,20 +27,7 @@ class TimelineViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
         
-//        //table view reloads when items are changed.
-//        self.items.asObservable()
-//            .bind(to: tableView.rx.items) {
-//               (tableView, index, post) in
-//                let indexPath = IndexPath(item: index, section:0)
-//                if let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineCell", for: indexPath) as? TimelineCell {
-//                    cell.set(post: post)
-//                    return cell
-//                }
-//
-//                return UITableViewCell()
-//        }.disposed(by: disposeBag)
-        
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidCreateNewPost(_:)), name: Notification.Name.DataDidCreateNewPost, object: nil)
         
         //load database
         do {
@@ -72,5 +59,14 @@ class TimelineViewController: UITableViewController {
         cell.set(post: post)
         
         return cell
+    }
+    
+    //MARK - listen for new post created.
+    @objc func onDidCreateNewPost (_ notification: Notification) {
+        if let post = notification.userInfo?["post"] as? Post {
+            var updatedItems = self.items.value
+            updatedItems.insert(post, at: 0)
+            self.items.accept(updatedItems)
+        }
     }
 }

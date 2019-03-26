@@ -12,6 +12,10 @@ import RealmSwift
 import QuartzCore
 import RxCocoa
 
+extension NSNotification.Name {
+    public static let DataDidCreateNewPost = NSNotification.Name(rawValue: "DataDidCreateNewPost")
+}
+
 class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var textView: UITextView!
@@ -22,6 +26,8 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView3: UIImageView!
     var imageViews = [UIImageView]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +76,11 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             try realm.write {
                 realm.add(post)
             }
-            self.dismiss(animated: true, completion: nil)
+            //let every component know about this new post just created.
+            NotificationCenter.default.post(name: .DataDidCreateNewPost, object: nil, userInfo: ["post": post])
+            
+            self.dismiss(animated: true, completion:nil)
+            
         }catch {
             self.alert(error: error)
         }
