@@ -32,6 +32,8 @@ extension UIImage {
 
 //MARK: read write image on disk
 extension UIImage {
+    //save self on disk
+    //@retrun url to the Data file
     func saveOnDisk() throws -> URL? {
         
         let fm = FileManager.default
@@ -39,7 +41,17 @@ extension UIImage {
         fileUrl.appendPathComponent(self.randomFilename())
         let data = self.pngData()
         try data?.write(to: fileUrl)
-        
         return fileUrl
+    }
+    
+    //load image data as a UIImage
+    //@return UIImage or nil
+    static func loadImage(with fileUrlString: String) throws -> UIImage? {
+        
+        let fileUrl = URL(fileURLWithPath: fileUrlString)
+        let data = try Data(contentsOf: fileUrl)
+        let image = UIImage(data: data)
+        return image
+        
     }
 }
