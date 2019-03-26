@@ -15,15 +15,18 @@ import RxCocoa
 class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var textView: UITextView!
-    @IBOutlet var ImageStackView: UIStackView!
     @IBOutlet var composeButton: UIBarButtonItem!
     
     let disposeBag = DisposeBag()
-    let MAX_IMAGES = 3
-    var addedImages = BehaviorRelay<[UIImage]>(value:[])
-    
+    @IBOutlet var imageView1: UIImageView!
+    @IBOutlet var imageView2: UIImageView!
+    @IBOutlet var imageView3: UIImageView!
+    var imageViews = [UIImageView]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.imageViews = [self.imageView1, self.imageView2, self.imageView3]
+        
         self.textView.layer.borderColor = UIColor.black.cgColor
         self.textView.layer.borderWidth = 1
         self.textView.layer.cornerRadius = 8
@@ -37,11 +40,6 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             })
             .disposed(by: disposeBag)
         
-        self.addedImages.asObservable().subscribe(onNext: { [weak self] (_) in
-            self?.updateAddedImagesUI()
-        })
-        
-        
         self.textView.becomeFirstResponder()
     }
     
@@ -51,6 +49,22 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         post.timestamp = Date()
         post.body = self.textView.text
         
+        //copy each image to app's directory, then store just the file url.
+        let copiedImageURLs = self.imageViews
+            .compactMap { (iv) -> UIImage? in
+                return iv.image
+            }.compactMap { (image) -> String? in
+                do {
+                    return try image.saveOnDisk()?.absoluteString
+                }catch {
+                    print("copy image fails: \(error)")
+                    return nil
+                }
+            }
+        
+        post.imageURLString.append(objectsIn: copiedImageURLs)
+        
+        //actually save the new post.
         do {
             let realm = try Realm()
             try realm.write {
@@ -74,24 +88,17 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    func nextFreeImageView() -> UIImageView? {
+        return self.imageViews.filter({ (iv) -> Bool in
+            return iv.image == nil
+        }).first
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            var images = self.addedImages.value
-            images.append(image)
-            self.addedImages.accept( images )
+            self.nextFreeImageView()?.image = image
         }
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func updateAddedImagesUI () {
-        for v in self.ImageStackView.subviews {
-            v.removeFromSuperview()
-        }
-        
-        for im in self.addedImages.value {
-            let iv = UIImageView(image: im)
-            iv.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            self.ImageStackView.addSubview(iv)
-        }
-    }
 }

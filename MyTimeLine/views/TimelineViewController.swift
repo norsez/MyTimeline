@@ -45,7 +45,9 @@ class TimelineViewController: UITableViewController {
         //load database
         do {
             let realm = try Realm()
-            let results = realm.objects(Post.self)
+            let results = realm.objects(Post.self).sorted { (p1, p2) -> Bool in
+                return p1.timestamp.compare(p2.timestamp) == ComparisonResult.orderedDescending
+            }
             let posts = Array(results.map({ (p) -> Post in
                 return p
             }))

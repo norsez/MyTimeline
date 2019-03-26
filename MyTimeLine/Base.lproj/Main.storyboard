@@ -136,12 +136,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZB-Vr-1WJ">
-                                <rect key="frame" x="16" y="216" width="343" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="CXU-Q9-gli"/>
-                                </constraints>
-                            </stackView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVi-tu-1ro">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
@@ -165,7 +159,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZm-Ik-vRB">
                                 <rect key="frame" x="303" y="334" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="E91-Eq-BTq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="E91-Eq-BTq"/>
                                     <constraint firstAttribute="height" constant="30" id="lis-Zd-CtK"/>
                                 </constraints>
                                 <state key="normal" title="Add"/>
@@ -182,26 +176,48 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvU-XG-fdv">
+                                <rect key="frame" x="16" y="216" width="113" height="115"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zad-Tb-VIB">
+                                <rect key="frame" x="131" y="216" width="113" height="115"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-h0-SRe">
+                                <rect key="frame" x="246" y="216" width="113" height="115"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cnN-ES-HOr" firstAttribute="trailing" secondItem="RZB-Vr-1WJ" secondAttribute="trailing" constant="16" id="3Vn-RV-eld"/>
-                            <constraint firstItem="UZm-Ik-vRB" firstAttribute="top" secondItem="RZB-Vr-1WJ" secondAttribute="bottom" constant="8" id="3js-2h-fGv"/>
-                            <constraint firstItem="RZB-Vr-1WJ" firstAttribute="leading" secondItem="cnN-ES-HOr" secondAttribute="leading" constant="16" id="AVD-S7-G0m"/>
+                            <constraint firstItem="gvU-XG-fdv" firstAttribute="width" secondItem="JPj-4S-d4R" secondAttribute="height" multiplier="113:128" id="6oI-bW-Mr5"/>
+                            <constraint firstItem="wVJ-h0-SRe" firstAttribute="width" secondItem="gvU-XG-fdv" secondAttribute="width" id="DTx-Q4-cUe"/>
                             <constraint firstItem="LVi-tu-1ro" firstAttribute="leading" secondItem="cnN-ES-HOr" secondAttribute="leading" id="Dfu-tr-hhv"/>
+                            <constraint firstItem="UZm-Ik-vRB" firstAttribute="top" secondItem="wVJ-h0-SRe" secondAttribute="bottom" constant="3" id="EBj-na-La2"/>
+                            <constraint firstItem="Zad-Tb-VIB" firstAttribute="leading" secondItem="gvU-XG-fdv" secondAttribute="trailing" constant="2" id="FHA-VW-SSy"/>
+                            <constraint firstItem="Zad-Tb-VIB" firstAttribute="top" secondItem="JPj-4S-d4R" secondAttribute="bottom" constant="8" id="Hkq-ru-ZEt"/>
+                            <constraint firstItem="wVJ-h0-SRe" firstAttribute="top" secondItem="JPj-4S-d4R" secondAttribute="bottom" constant="8" id="JHQ-gj-sOo"/>
+                            <constraint firstItem="gvU-XG-fdv" firstAttribute="height" secondItem="JPj-4S-d4R" secondAttribute="height" multiplier="0.9" id="LvB-cI-cU6"/>
                             <constraint firstItem="LVi-tu-1ro" firstAttribute="top" secondItem="cnN-ES-HOr" secondAttribute="top" id="Ohc-uW-OEU"/>
                             <constraint firstItem="JPj-4S-d4R" firstAttribute="top" secondItem="LVi-tu-1ro" secondAttribute="bottom" constant="16" id="QD0-oR-rOR"/>
                             <constraint firstItem="JPj-4S-d4R" firstAttribute="leading" secondItem="cnN-ES-HOr" secondAttribute="leading" constant="16" id="Quk-bF-Mzf"/>
+                            <constraint firstItem="Zad-Tb-VIB" firstAttribute="height" secondItem="gvU-XG-fdv" secondAttribute="height" id="Xu2-RI-uXf"/>
                             <constraint firstItem="cnN-ES-HOr" firstAttribute="trailing" secondItem="UZm-Ik-vRB" secondAttribute="trailing" constant="42" id="aP1-Bj-aAK"/>
+                            <constraint firstItem="gvU-XG-fdv" firstAttribute="leading" secondItem="cnN-ES-HOr" secondAttribute="leading" constant="16" id="caQ-R2-fkn"/>
+                            <constraint firstItem="cnN-ES-HOr" firstAttribute="trailing" secondItem="UZm-Ik-vRB" secondAttribute="trailing" constant="42" id="eCW-cG-4cD"/>
                             <constraint firstItem="LVi-tu-1ro" firstAttribute="trailing" secondItem="cnN-ES-HOr" secondAttribute="trailing" id="gVc-yK-QVq"/>
+                            <constraint firstItem="cnN-ES-HOr" firstAttribute="trailing" secondItem="wVJ-h0-SRe" secondAttribute="trailing" constant="16" id="hYZ-Se-usV"/>
+                            <constraint firstItem="Zad-Tb-VIB" firstAttribute="width" secondItem="gvU-XG-fdv" secondAttribute="width" id="izh-IV-fUO"/>
+                            <constraint firstItem="wVJ-h0-SRe" firstAttribute="height" secondItem="gvU-XG-fdv" secondAttribute="height" id="jD5-qy-lgL"/>
+                            <constraint firstItem="gvU-XG-fdv" firstAttribute="top" secondItem="JPj-4S-d4R" secondAttribute="bottom" constant="8" id="p4F-Ck-HWj"/>
                             <constraint firstItem="cnN-ES-HOr" firstAttribute="trailing" secondItem="JPj-4S-d4R" secondAttribute="trailing" constant="16" id="qhe-SR-lyo"/>
-                            <constraint firstItem="RZB-Vr-1WJ" firstAttribute="top" secondItem="JPj-4S-d4R" secondAttribute="bottom" constant="8" id="uEJ-EI-gul"/>
+                            <constraint firstItem="wVJ-h0-SRe" firstAttribute="leading" secondItem="Zad-Tb-VIB" secondAttribute="trailing" constant="2" id="rZb-6i-edO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cnN-ES-HOr"/>
                     </view>
                     <connections>
-                        <outlet property="ImageStackView" destination="RZB-Vr-1WJ" id="dfF-ZJ-LN0"/>
                         <outlet property="composeButton" destination="vLk-id-qRI" id="dUz-7H-LBR"/>
+                        <outlet property="imageView1" destination="gvU-XG-fdv" id="0hw-JD-jSp"/>
+                        <outlet property="imageView2" destination="Zad-Tb-VIB" id="yxU-L7-w9l"/>
+                        <outlet property="imageView3" destination="wVJ-h0-SRe" id="csH-eD-O8u"/>
                         <outlet property="textView" destination="JPj-4S-d4R" id="dfV-2b-0i3"/>
                     </connections>
                 </viewController>
