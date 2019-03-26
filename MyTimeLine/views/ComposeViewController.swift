@@ -25,13 +25,20 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var imageView1: UIImageView!
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView3: UIImageView!
+    @IBOutlet var addButtonImageView: UIImageView!
     var imageViews = [UIImageView]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.imageViews = [self.imageView1, self.imageView2, self.imageView3]
+        
+        
+        //configure the add image button
+        let tapToAdd = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
+        self.addButtonImageView.addGestureRecognizer(tapToAdd)
+        
         
         self.textView.layer.borderColor = UIColor.black.cgColor
         self.textView.layer.borderWidth = 1

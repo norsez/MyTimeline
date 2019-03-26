@@ -19,7 +19,6 @@ class TimelineViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //reload when items are changed.
         self.items.asObservable()
             .subscribe(onNext: { [weak self] (posts) in
@@ -42,6 +41,9 @@ class TimelineViewController: UITableViewController {
         }catch {
             self.alert(error: error)
         }
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

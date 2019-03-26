@@ -12,10 +12,10 @@ class TimelineCell: UITableViewCell {
     
     @IBOutlet var timestampLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
-    @IBOutlet var imageView1: UIImageView!
-    @IBOutlet var imageView2: UIImageView!
-    @IBOutlet var imageView3: UIImageView!
+    @IBOutlet var imageBox: UIView!
+    @IBOutlet var imageBoxHeight: NSLayoutConstraint!
     
+    @IBOutlet var contraintImage1Height: NSLayoutConstraint!
     func set(post: Post) {
         self.bodyLabel.text = post.body
         let df = DateFormatter()
@@ -29,29 +29,17 @@ class TimelineCell: UITableViewCell {
         
         if post.imageThumbnails.count > 0 {
             
-            self.imageView1.image = post.imageThumbnails.first!
-            
-            
-            if post.imageThumbnails.count > 1 {
-                self.imageView2.image = post.imageThumbnails[1]
-            }
-            
-            if post.imageThumbnails.count > 2 {
-                self.imageView3.image = post.imageThumbnails[2]
-            }
+           
+            self.imageBoxHeight.constant = 180
+        }else {
+            self.imageBoxHeight.constant = 0
         }
     }
     
     override func prepareForReuse() {
         self.bodyLabel.text = nil
-        self.imageView1.image = nil
-        self.imageView2.image = nil
-        self.imageView3.image = nil
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
         
     }
+    
 }
 
