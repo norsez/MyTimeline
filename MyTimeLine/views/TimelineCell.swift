@@ -23,9 +23,7 @@ class TimelineCell: UITableViewCell {
     func set(post: Post) {
         self.post = post
         self.bodyLabel.text = post.body
-        let df = DateFormatter()
-        df.dateFormat = "HH:mm"
-        self.timestampLabel.text = "\(df.string(from: post.timestamp)) >"
+        self.timestampLabel.text = "\(post.timestamp.asTimelineTime) >"
         
         if (self.post?.imageDataFilenames.count ?? 0)  > 0 && (self.post?.imageThumbnails.count ?? 0) == 0 {
             //cache thumbnails on post model.

@@ -34,6 +34,17 @@ extension String {
     }
 }
 
+//MARK - Date util
+extension Date {
+    var asTimelineTime: String {
+        get{
+            let df = DateFormatter()
+            df.dateFormat = "hh:mm a"
+            return df.string(from: self)
+        }
+    }
+}
+
 //MARK - view controller util
 extension UIViewController {
     func alert(error: Error) {
