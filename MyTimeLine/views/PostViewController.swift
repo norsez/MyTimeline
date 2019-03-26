@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import SKPhotoBrowser
+
 //MARK - view for a post
 class PostViewController: UITableViewController {
     
     enum Section: Int {
         case body, image
         static let ALL:[Section] = [.body, .image]
+        static func isImage(_ indexPath: IndexPath) -> Bool {
+            let section = Section(rawValue: indexPath.section)!
+            return section == .image
+        }
     }
     
     let CELL_BODY = "BodyCell"
@@ -41,38 +47,40 @@ class PostViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = Section(rawValue: indexPath.section)!
         
-        switch section {
-        case .body:
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.CELL_BODY, for: indexPath) as! PostBodyCell
-            cell.postBodyLabel.text = self.post?.body
-            cell.postTimeLabel.text = self.post?.timestamp.asTimelineTime
-            return cell
-        case .image:
+        if Section.isImage(indexPath) {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.CELL_IMAGE, for: indexPath) as! PostImageCell
             let image = self.post?.imageThumbnails[indexPath.row]
             cell.postImageView.image = image
             return cell
         }
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.CELL_BODY, for: indexPath) as! PostBodyCell
+        cell.postBodyLabel.text = self.post?.body
+        cell.postTimeLabel.text = self.post?.timestamp.asTimelineTime
+        return cell
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        if segue.identifier == "See Photo" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let section = Section(rawValue: indexPath.section)!
-                switch  section {
-                case .image:
-                    let ctrl = segue.destination as! PhotoViewController
-                    ctrl.imageToShow = self.post?.imageThumbnails[indexPath.row]
-                default:
-                    //do nothing
-                    break
-                }
-            }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if Section.isImage(indexPath) {
+            showPhoto(at: indexPath)
         }
     }
     
+}
+
+//MARK: show photo viewer
+extension PostViewController {
+    func showPhoto(at indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! PostImageCell
+        let originImage = cell.imageView?.image ?? UIImage()
+        let photos = self.post?.imageThumbnails.compactMap({ (image) -> SKPhoto? in
+            return SKPhoto.photoWithImage(image)
+        })
+        let browser = SKPhotoBrowser(originImage: originImage, photos: photos ?? [], animatedFromView: cell)
+        browser.initializePageIndex(indexPath.row)
+        self.present(browser, animated: true, completion: nil)
+    }
 }

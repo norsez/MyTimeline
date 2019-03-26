@@ -25,7 +25,6 @@
 		F3BABB6D2249D9F400E618DC /* PlacehodlerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */; };
 		F3BABB6F2249EFBE00E618DC /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */; };
 		F3BABB71224A5D8800E618DC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB70224A5D8800E618DC /* PostCell.swift */; };
-		F3BABB73224A651800E618DC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB72224A651800E618DC /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacehodlerText.swift; sourceTree = "<group>"; };
 		F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		F3BABB70224A5D8800E618DC /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		F3BABB72224A651800E618DC /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +156,6 @@
 				F39FF03B2249990C0004F265 /* TimelineViewController.swift */,
 				F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */,
 				F39FF03F224999540004F265 /* PostViewController.swift */,
-				F3BABB72224A651800E618DC /* PhotoViewController.swift */,
 				F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */,
 				F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */,
 				F3BABB70224A5D8800E618DC /* PostCell.swift */,
@@ -326,6 +323,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -336,6 +334,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,7 +357,6 @@
 				F3BABB71224A5D8800E618DC /* PostCell.swift in Sources */,
 				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
 				F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */,
-				F3BABB73224A651800E618DC /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

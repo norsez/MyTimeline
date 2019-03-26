@@ -11,6 +11,7 @@ target 'MyTimeLine' do
   pod 'RxCocoa'
   pod 'RxRealmDataSources'
   pod 'RealmSwift'
+  pod 'SKPhotoBrowser'
 
   target 'MyTimeLineTests' do
     inherit! :search_paths
