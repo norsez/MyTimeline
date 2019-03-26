@@ -16,6 +16,7 @@ class TimelineCell: UITableViewCell {
     @IBOutlet var imageBoxHeight: NSLayoutConstraint!
     
     var post: Post? = nil
+    var lastImageBoxConstraints = [NSLayoutConstraint]()
     func set(post: Post) {
         self.post = post
         self.bodyLabel.text = post.body
@@ -42,6 +43,7 @@ class TimelineCell: UITableViewCell {
         }else {
             self.imageBoxHeight.constant = 0
         }
+        
     }
     
     override func prepareForReuse() {
@@ -50,6 +52,7 @@ class TimelineCell: UITableViewCell {
         for v in self.imageBox.subviews{
             v.removeFromSuperview()
         }
+        self.imageBox.removeConstraints(self.lastImageBoxConstraints)
     }
     
     //MARK - picture layout
@@ -66,6 +69,7 @@ class TimelineCell: UITableViewCell {
         var constraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[iv]-|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-[iv]-|", options: [], metrics: nil, views: views)
         self.imageBox.addConstraints(constraints)
+        self.lastImageBoxConstraints = constraints
     }
     
     func arrange2Images() {
@@ -88,6 +92,7 @@ class TimelineCell: UITableViewCell {
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-[iv]-|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-[iv2]-|", options: [], metrics: nil, views: views)
         self.imageBox.addConstraints(constraints)
+        self.lastImageBoxConstraints = constraints
     }
     
     func arrange3Images() {
@@ -122,6 +127,7 @@ class TimelineCell: UITableViewCell {
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-[iv]-|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-[iv2]-[iv3(==iv2)]-|", options: [], metrics: nil, views: views)
         self.imageBox.addConstraints(constraints)
+        self.lastImageBoxConstraints = constraints
     }
 }
 

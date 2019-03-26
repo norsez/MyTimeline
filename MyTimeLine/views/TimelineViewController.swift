@@ -14,11 +14,15 @@ import RealmSwift
 //MARK - view for timeline
 class TimelineViewController: UITableViewController {
     let CELLID = "TimelineCell"
+    let searchController = UISearchController(searchResultsController: nil)
     var disposeBag = DisposeBag()
     var items = BehaviorRelay<[Post]>(value:[])
+    var searchResult = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearch()
+        
         //reload when items are changed.
         self.items.asObservable()
             .subscribe(onNext: { [weak self] (posts) in
@@ -26,7 +30,10 @@ class TimelineViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
         
+        //listen for newly an added post
         NotificationCenter.default.addObserver(self, selector: #selector(onDidCreateNewPost(_:)), name: Notification.Name.DataDidCreateNewPost, object: nil)
+        
+        
         
         //load database
         do {
@@ -46,18 +53,30 @@ class TimelineViewController: UITableViewController {
         tableView.estimatedRowHeight = 600
     }
     
+    
+    //MARK - table view datasource delegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.value.count
+        if isFiltering(){
+            return self.searchResult.count
+        }else {
+            return self.items.value.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.CELLID , for: indexPath) as! TimelineCell
         
-        let post = self.items.value[indexPath.row]
+        let post: Post
+        if isFiltering(){
+            post = self.searchResult[indexPath.row]
+        }else {
+            post = self.items.value[indexPath.row]
+        }
+        
         cell.set(post: post)
         
         return cell
@@ -70,5 +89,36 @@ class TimelineViewController: UITableViewController {
             updatedItems.insert(post, at: 0)
             self.items.accept(updatedItems)
         }
+    }
+    
+    
+}
+//MARK - search
+extension TimelineViewController: UISearchResultsUpdating {
+    
+    func isFiltering() -> Bool {
+        return self.searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        self.searchResult = self.items.value.filter({( post : Post) -> Bool in
+            return post.body?.lowercased().contains(searchText.lowercased()) ?? false
+        })
+        
+        tableView.reloadData()
+    }
+    func configureSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }

@@ -18,17 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="trw-Qz-jkh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="ZCG-BD-rge" id="EJE-UO-mVo"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="318" id="x5Y-dq-t5i" customClass="TimelineCell" customModule="MyTimeLine" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="318"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="318"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x5Y-dq-t5i" id="urE-Id-c7w">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="317.5"/>
@@ -97,20 +89,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="u8g-i9-X7K" id="OcE-yg-zvD"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xW0-b2-Pef" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="u8g-i9-X7K">
-                    <connections>
-                        <outlet property="delegate" destination="ZCG-BD-rge" id="KFP-bN-5Gl"/>
-                        <outlet property="searchBar" destination="trw-Qz-jkh" id="4c7-aC-wh8"/>
-                        <outlet property="searchContentsController" destination="ZCG-BD-rge" id="INt-5P-hDJ"/>
-                        <outlet property="searchResultsDataSource" destination="ZCG-BD-rge" id="Q9B-mA-bf7"/>
-                        <outlet property="searchResultsDelegate" destination="ZCG-BD-rge" id="pFr-UJ-R7Y"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="256.80000000000001" y="882.90854572713647"/>
         </scene>
