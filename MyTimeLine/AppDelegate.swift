@@ -19,13 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let realm = try! Realm()
 //        print(Realm.Configuration.defaultConfiguration.fileURL)
 //        
-//        var post = Post()
-//        post.body = "Hello. This is my first post."
-//        post.images = [UIImage(named: "red")!]
-//        try! realm.write {
-//            realm.add(post)
-//        }
-        
+//       
         return true
     }
 
