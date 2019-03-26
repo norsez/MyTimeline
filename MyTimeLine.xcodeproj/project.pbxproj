@@ -23,6 +23,7 @@
 		F3BABB662249B77400E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
 		F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB672249B8DA00E618DC /* TestUtils.swift */; };
 		F3BABB692249B96000E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
+		F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F39FF0462249B0EE0004F265 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F3BABB652249B77400E618DC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F3BABB672249B8DA00E618DC /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				F39FF03B2249990C0004F265 /* TimelineViewController.swift */,
 				F39FF03F224999540004F265 /* PostViewController.swift */,
+				F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */,
 				F39FF04122499A0C0004F265 /* TimelineViewCell.xib */,
 				F39FF04322499A1C0004F265 /* TimelineViewCell.swift */,
 			);
@@ -347,6 +350,7 @@
 				F39FF04422499A1C0004F265 /* TimelineViewCell.swift in Sources */,
 				F39FF0472249B0EE0004F265 /* Post.swift in Sources */,
 				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
+				F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

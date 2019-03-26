@@ -8,9 +8,7 @@
 
 import UIKit
 import RealmSwift
-
-
-
+//MARK - model class for posts
 final class Post: Object {
     @objc dynamic var timestamp = Date()
     @objc dynamic var body: String?
