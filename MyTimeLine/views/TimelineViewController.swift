@@ -91,6 +91,17 @@ class TimelineViewController: UITableViewController {
         }
     }
     
+    //MARK - segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "See Post" {
+            if let ctrl = segue.destination as? PostViewController,
+                let index = tableView.indexPathForSelectedRow {
+                
+                let post = self.items.value[index.row]
+                ctrl.post = post
+            }
+        }
+    }
     
 }
 //MARK - search
