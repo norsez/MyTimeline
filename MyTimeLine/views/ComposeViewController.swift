@@ -61,14 +61,14 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 return iv.image
             }.compactMap { (image) -> String? in
                 do {
-                    return try image.saveOnDisk()?.absoluteString
+                    return try image.saveOnDisk()
                 }catch {
                     print("copy image fails: \(error)")
                     return nil
                 }
             }
         
-        post.imageURLString.append(objectsIn: copiedImageURLs)
+        post.imageDataFilename.append(objectsIn: copiedImageURLs)
         
         //actually save the new post.
         do {

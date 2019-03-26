@@ -26,6 +26,12 @@ extension String {
             return self.trimmingCharacters(in: CharacterSet(charactersIn: " \t\n\r")).count == 0
         }
     }
+    
+    var asFileUrl: URL? {
+        get {
+            return URL(fileURLWithPath: self)
+        }
+    }
 }
 
 //MARK - view controller util
@@ -49,26 +55,27 @@ extension UIImage {
 extension UIImage {
     //save self on disk
     //@retrun url to the Data file
-    func saveOnDisk() throws -> URL? {
+    func saveOnDisk() throws -> String {
         
         let fm = FileManager.default
         var fileUrl = try fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        fileUrl.appendPathComponent(self.randomFilename())
+        let filename = self.randomFilename()
+        fileUrl.appendPathComponent(filename)
         let data = self.pngData()
         try data?.write(to: fileUrl)
-        return fileUrl
+        return filename
     }
     
     //load image data as a UIImage
     //@return UIImage or nil
-    static func loadImage(with fileUrlString: String?) -> UIImage? {
+    static func loadImage(with filename: String) -> UIImage? {
         
-        guard let fileUrlString = fileUrlString else {
-            return nil
-        }
+        let fm = FileManager.default
         
         do {
-            let fileUrl = URL(fileURLWithPath: fileUrlString)
+            var fileUrl = try fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            fileUrl.appendPathComponent(filename)
+            
             let data = try Data(contentsOf: fileUrl)
             let image = UIImage(data: data)
             return image

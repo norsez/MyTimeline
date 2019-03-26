@@ -22,19 +22,36 @@ class TimelineCell: UITableViewCell {
         df.dateFormat = "HH:mm"
         self.timestampLabel.text = df.string(from: post.timestamp)
         
-        if let us = post.imageURLString.first {
-            self.imageView1.image = UIImage.loadImage(with: us )
+        if post.imageDataFilename.count > 0 && post.imageThumbnails.count == 0 {
+            //cache thumbnails on post model.
+            post.loadThumbnails()
         }
         
-        if post.imageURLString.count > 1 {
-            let us = post.imageURLString[1]
-            self.imageView2.image = UIImage.loadImage(with: us )
+        if post.imageThumbnails.count > 0 {
+            
+            self.imageView1.image = post.imageThumbnails.first!
+            
+            
+            if post.imageThumbnails.count > 1 {
+                self.imageView2.image = post.imageThumbnails[1]
+            }
+            
+            if post.imageThumbnails.count > 2 {
+                self.imageView3.image = post.imageThumbnails[2]
+            }
         }
+    }
+    
+    override func prepareForReuse() {
+        self.bodyLabel.text = nil
+        self.imageView1.image = nil
+        self.imageView2.image = nil
+        self.imageView3.image = nil
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        if post.imageURLString.count > 2 {
-            let us = post.imageURLString[2]
-            self.imageView3.image = UIImage.loadImage(with: us )
-        }
     }
 }
 
