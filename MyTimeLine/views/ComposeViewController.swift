@@ -75,7 +75,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
         
-        post.imageDataFilename.append(objectsIn: copiedImageURLs)
+        post.imageDataFilenames.append(objectsIn: copiedImageURLs)
         
         //actually save the new post.
         do {

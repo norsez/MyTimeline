@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+
+
 //MARK - view for timeline cell
 class TimelineCell: UITableViewCell {
     
@@ -22,27 +25,15 @@ class TimelineCell: UITableViewCell {
         self.bodyLabel.text = post.body
         let df = DateFormatter()
         df.dateFormat = "HH:mm"
-        self.timestampLabel.text = df.string(from: post.timestamp)
+        self.timestampLabel.text = "\(df.string(from: post.timestamp)) >"
         
-        if post.imageDataFilename.count > 0 && post.imageThumbnails.count == 0 {
+        if (self.post?.imageDataFilenames.count ?? 0)  > 0 && (self.post?.imageThumbnails.count ?? 0) == 0 {
             //cache thumbnails on post model.
-            post.loadThumbnails()
+            self.post?.loadThumbnails()
+            
         }
+        self.layoutImages()
         
-        if post.imageThumbnails.count > 0 {
-            
-            if post.imageThumbnails.count == 1 {
-                arrange1Image()
-            }else if post.imageThumbnails.count == 2 {
-                arrange2Images()
-            }else if post.imageThumbnails.count == 3 {
-                arrange3Images()
-            }
-            
-            self.imageBoxHeight.constant = 180
-        }else {
-            self.imageBoxHeight.constant = 0
-        }
         
     }
     
@@ -53,6 +44,25 @@ class TimelineCell: UITableViewCell {
             v.removeFromSuperview()
         }
         self.imageBox.removeConstraints(self.lastImageBoxConstraints)
+    }
+    
+    func layoutImages() {
+       
+        
+        if (self.post?.imageThumbnails.count ?? 0) > 0 {
+            
+            if self.post?.imageThumbnails.count == 1 {
+                self.arrange1Image()
+            }else if post?.imageThumbnails.count == 2 {
+                self.arrange2Images()
+            }else if self.post?.imageThumbnails.count == 3 {
+                self.arrange3Images()
+            }
+            
+            self.imageBoxHeight.constant = 180
+        }else {
+            self.imageBoxHeight.constant = 0
+        }
     }
     
     //MARK - picture layout
@@ -131,3 +141,32 @@ class TimelineCell: UITableViewCell {
     }
 }
 
+//load thumbnails from disk
+extension Post {
+    
+    //load images
+    func loadThumbnails () {
+        
+        self.imageThumbnails = []
+        if let filename = self.imageDataFilenames.first,
+            let image = UIImage.loadImage(with: filename ){
+            self.imageThumbnails.append( image )
+        }
+        
+        if self.imageDataFilenames.count > 1 {
+            let filename = self.imageDataFilenames[1]
+            if let image = UIImage.loadImage(with: filename ) {
+                self.imageThumbnails.append(  image )
+                
+            }
+        }
+        
+        if self.imageDataFilenames.count > 2 {
+            let filename = self.imageDataFilenames[2]
+            if let image = UIImage.loadImage(with: filename ) {
+                self.imageThumbnails.append( image )
+            }
+        }
+        
+    }
+}
