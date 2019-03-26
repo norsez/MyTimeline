@@ -20,6 +20,21 @@ extension String {
         }
         return result
     }
+    
+    var isTrimmedEmpty: Bool {
+        get {
+            return self.trimmingCharacters(in: CharacterSet(charactersIn: " \t\n\r")).count == 0
+        }
+    }
+}
+
+//MARK - view controller util
+extension UIViewController {
+    func alert(error: Error) {
+        let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 //MARK - id util
@@ -46,12 +61,20 @@ extension UIImage {
     
     //load image data as a UIImage
     //@return UIImage or nil
-    static func loadImage(with fileUrlString: String) throws -> UIImage? {
+    static func loadImage(with fileUrlString: String?) -> UIImage? {
         
-        let fileUrl = URL(fileURLWithPath: fileUrlString)
-        let data = try Data(contentsOf: fileUrl)
-        let image = UIImage(data: data)
-        return image
+        guard let fileUrlString = fileUrlString else {
+            return nil
+        }
         
+        do {
+            let fileUrl = URL(fileURLWithPath: fileUrlString)
+            let data = try Data(contentsOf: fileUrl)
+            let image = UIImage(data: data)
+            return image
+        }catch {
+            debugPrint(error)
+            return nil
+        }
     }
 }

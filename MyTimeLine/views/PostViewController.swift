@@ -10,4 +10,5 @@ import UIKit
 //MARK - view for a post
 class PostViewController: UITableViewController {
     
+    
 }

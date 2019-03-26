@@ -17,13 +17,13 @@
 		F39FF03A22498D2D0004F265 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F39FF03922498D2D0004F265 /* Podfile */; };
 		F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF03B2249990C0004F265 /* TimelineViewController.swift */; };
 		F39FF040224999540004F265 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF03F224999540004F265 /* PostViewController.swift */; };
-		F39FF04222499A0C0004F265 /* TimelineViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F39FF04122499A0C0004F265 /* TimelineViewCell.xib */; };
-		F39FF04422499A1C0004F265 /* TimelineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF04322499A1C0004F265 /* TimelineViewCell.swift */; };
 		F39FF0472249B0EE0004F265 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF0462249B0EE0004F265 /* Post.swift */; };
 		F3BABB662249B77400E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
 		F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB672249B8DA00E618DC /* TestUtils.swift */; };
 		F3BABB692249B96000E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
 		F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */; };
+		F3BABB6D2249D9F400E618DC /* PlacehodlerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */; };
+		F3BABB6F2249EFBE00E618DC /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +55,12 @@
 		F39FF03922498D2D0004F265 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F39FF03B2249990C0004F265 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		F39FF03F224999540004F265 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		F39FF04122499A0C0004F265 /* TimelineViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineViewCell.xib; sourceTree = "<group>"; };
-		F39FF04322499A1C0004F265 /* TimelineViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewCell.swift; sourceTree = "<group>"; };
 		F39FF0462249B0EE0004F265 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F3BABB652249B77400E618DC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F3BABB672249B8DA00E618DC /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacehodlerText.swift; sourceTree = "<group>"; };
+		F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +154,8 @@
 				F39FF03B2249990C0004F265 /* TimelineViewController.swift */,
 				F39FF03F224999540004F265 /* PostViewController.swift */,
 				F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */,
-				F39FF04122499A0C0004F265 /* TimelineViewCell.xib */,
-				F39FF04322499A1C0004F265 /* TimelineViewCell.swift */,
+				F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */,
+				F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -256,7 +256,6 @@
 				F39FF02422498D070004F265 /* LaunchScreen.storyboard in Resources */,
 				F39FF02122498D070004F265 /* Assets.xcassets in Resources */,
 				F39FF03A22498D2D0004F265 /* Podfile in Resources */,
-				F39FF04222499A0C0004F265 /* TimelineViewCell.xib in Resources */,
 				F39FF01F22498D050004F265 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,10 +343,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BABB6D2249D9F400E618DC /* PlacehodlerText.swift in Sources */,
 				F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */,
 				F39FF040224999540004F265 /* PostViewController.swift in Sources */,
 				F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */,
-				F39FF04422499A1C0004F265 /* TimelineViewCell.swift in Sources */,
+				F3BABB6F2249EFBE00E618DC /* TimelineCell.swift in Sources */,
 				F39FF0472249B0EE0004F265 /* Post.swift in Sources */,
 				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
 				F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */,
