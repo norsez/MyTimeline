@@ -11,6 +11,7 @@ import UIKit
 
 //MARK: quick and dirty way to generate hash
 extension String {
+    //@return a random string of length len
     static func randomString(withLength len: Int) -> String {
         let LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var result = ""
@@ -21,12 +22,13 @@ extension String {
         return result
     }
     
+    //@return true if trimmed equals an empty string
     var isTrimmedEmpty: Bool {
         get {
             return self.trimmingCharacters(in: CharacterSet(charactersIn: " \t\n\r")).count == 0
         }
     }
-    
+    //@return self as a file url or nil
     var asFileUrl: URL? {
         get {
             return URL(fileURLWithPath: self)
@@ -36,10 +38,12 @@ extension String {
 
 //MARK - Date util
 extension Date {
+    
+    //@return data format used in the UI mockup.
     var asTimelineTime: String {
         get{
             let df = DateFormatter()
-            df.dateFormat = "hh:mm a"
+            df.dateFormat = "h:mm a"
             return df.string(from: self)
         }
     }

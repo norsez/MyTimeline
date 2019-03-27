@@ -42,6 +42,23 @@ class TestUtils: XCTestCase {
         XCTAssertFalse("\n\n1 \n\t".isTrimmedEmpty)
         XCTAssertFalse("\n1\n1\n".isTrimmedEmpty)
     }
-
-
+    
+    func date24hour(with hour: Int, minute: Int) -> Date {
+        let cal = Calendar(identifier: Calendar.Identifier.gregorian)
+        return cal.date(bySettingHour: hour, minute: minute, second: 0, of: Date())!
+    }
+    
+    func testTimelineTimeDateFormat () {
+        
+        var expected = "8:00 AM"
+        var toTest = date24hour(with: 8, minute: 0).asTimelineTime
+        XCTAssertEqual("AM", expected.suffix(2), "format a is incorrect")
+        XCTAssertEqual(expected.count, toTest.count, "length of \(toTest) and \(expected) must be equal")
+        
+        expected = "8:00 PM"
+        toTest = date24hour(with: 20, minute: 0).asTimelineTime
+        XCTAssertEqual("PM", toTest.suffix(2), "format a is incorrect")
+        XCTAssertEqual(expected.count, toTest.count, "length of \(toTest) and \(expected) must be equal")
+        
+    }
 }
