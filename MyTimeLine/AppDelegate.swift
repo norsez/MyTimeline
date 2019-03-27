@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
+        
+        let seed = SeedData.shared
+        if !seed.hasSeedData {
+            try! seed.resetAndSeed()
+            seed.markHasSeedData()
+        }
         return true
     }
 

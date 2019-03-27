@@ -11,7 +11,7 @@ import RealmSwift
 
 //MARK - Seed data for app demo and testing
 class SeedData {
-    
+    let HAS_SEED_DATA = "HAS_SEED_DATA"
     func dropDatabase () throws {
         let realm = try Realm()
         try realm.write {
@@ -20,7 +20,7 @@ class SeedData {
         print("Empty database.")
     }
     
-    func loadSeedData() throws -> (messages: [String], pic_counts: [Int]) {
+    private func loadSeedData() throws -> (messages: [String], pic_counts: [Int]) {
         guard let url = Bundle.main.url(forResource: "seed_posts", withExtension: "plist") else {
             fatalError("can't find seed_posts.plist")
         }
@@ -40,7 +40,7 @@ class SeedData {
         return (messages, pic_counts)
     }
     
-    func loadImageNames() throws -> [String] {
+    private func loadImageNames() throws -> [String] {
         var imageNames = [String]()
         print("copying seed images to disk…")
         for i in 0...9 {
@@ -55,7 +55,7 @@ class SeedData {
         return imageNames
     }
     
-    func makeSeedPosts(with seed: (messages: [String], pic_counts: [Int]), imageNames: [String]) -> [Post] {
+    private func makeSeedPosts(with seed: (messages: [String], pic_counts: [Int]), imageNames: [String]) -> [Post] {
         print("no. of seed \(imageNames.count) images.")
         var posts = [Post]()
         for i in 0..<seed.messages.count {
@@ -69,6 +69,7 @@ class SeedData {
         return posts
     }
     
+    //reset and seed database with seed data
     func resetAndSeed() throws {
         let seed = try self.loadSeedData()
         let imageNames = try self.loadImageNames()
@@ -84,6 +85,19 @@ class SeedData {
     
         print("Done.")
     }
+    
+    func markHasSeedData() {
+        let uf = UserDefaults.standard
+        uf.set(true, forKey: self.HAS_SEED_DATA)
+        uf.synchronize()
+    }
+    
+    var hasSeedData: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: self.HAS_SEED_DATA)
+        }
+    }
+    
     private init(){}
     static let shared = SeedData()
 }
