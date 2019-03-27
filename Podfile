@@ -17,5 +17,10 @@ target 'MyTimeLine' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  target 'MyTimeLineUITests' do
+      inherit! :search_paths
+      # Pods for testing
+  end
 
 end

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+@testable import Pods_MyTimeLine
 class TestUtils: XCTestCase {
 
     override func setUp() {
@@ -22,17 +22,26 @@ class TestUtils: XCTestCase {
         let LENGTH = 16
         let rs1 = String.randomString(withLength: LENGTH)
         let rs2 = String.randomString(withLength: LENGTH)
-        XCTAssertEqual(LENGTH, rs1.count)
-        XCTAssertEqual(LENGTH, rs2.count)
+        XCTAssertEqual(LENGTH, rs1.count, "\(rs1) must be of size \(LENGTH)")
+        XCTAssertEqual(LENGTH, rs2.count, "\(rs2) must be of size \(LENGTH)")
         XCTAssertNotEqual(rs1, rs2, "\(rs1) \(rs2) can't be equal")
         
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testTrimmedEmpty() {
+        XCTAssertTrue("".isTrimmedEmpty)
+        XCTAssertTrue(" ".isTrimmedEmpty)
+        XCTAssertTrue(" \n\t\r".isTrimmedEmpty)
+        XCTAssertTrue(" \t\t".isTrimmedEmpty)
+        XCTAssertTrue("\n\n \n\t".isTrimmedEmpty)
+        XCTAssertFalse("1".isTrimmedEmpty)
+        XCTAssertFalse("11".isTrimmedEmpty)
+        XCTAssertFalse(" 1".isTrimmedEmpty)
+        XCTAssertFalse("1 ".isTrimmedEmpty)
+        XCTAssertFalse("1 \n 1".isTrimmedEmpty)
+        XCTAssertFalse("\n\n1 \n\t".isTrimmedEmpty)
+        XCTAssertFalse("\n1\n1\n".isTrimmedEmpty)
     }
+
 
 }

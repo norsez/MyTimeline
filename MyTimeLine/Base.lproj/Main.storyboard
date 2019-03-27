@@ -28,6 +28,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:12 &gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTd-Tn-Dtv">
                                             <rect key="frame" x="16" y="8" width="344" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" label="post timestamp"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="PbI-fH-Knz"/>
                                             </constraints>
@@ -37,6 +38,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8g-vl-Xo0">
                                             <rect key="frame" x="16" y="37" width="343" height="82"/>
+                                            <accessibility key="accessibilityConfiguration" label="post body"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Cfe-85-yn6"/>
                                             </constraints>
@@ -47,6 +49,9 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1H6-iD-bVw" userLabel="imagebox">
                                             <rect key="frame" x="0.0" y="127" width="375" height="180"/>
+                                            <accessibility key="accessibilityConfiguration" label="post imageBox">
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="180" id="3bg-KU-4ss"/>
                                             </constraints>
@@ -133,6 +138,9 @@
                             </textView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add image" translatesAutoresizingMaskIntoConstraints="NO" id="dZR-uA-75s" userLabel="Add button image">
                                 <rect key="frame" x="246" y="216" width="113" height="115"/>
+                                <accessibility key="accessibilityConfiguration" label="add image button">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="2zR-1q-g5h"/>
                                     <constraint firstAttribute="width" constant="113" id="kj7-QA-L1n"/>
@@ -205,6 +213,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:00 a.m." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s6-2X-PoQ">
                                             <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" label="post timestamp"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="aSz-Se-D0C"/>
                                             </constraints>
@@ -214,6 +223,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYl-q8-Fcf">
                                             <rect key="frame" x="8" y="37" width="359" height="21"/>
+                                            <accessibility key="accessibilityConfiguration" label="post body"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="8pY-Ug-MWl"/>
                                             </constraints>
@@ -248,6 +258,9 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ix4-RK-viV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="226"/>
+                                            <accessibility key="accessibilityConfiguration" label="post image">
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="226" id="go7-6r-uES"/>
                                             </constraints>

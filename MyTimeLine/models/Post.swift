@@ -9,13 +9,13 @@
 import UIKit
 import RealmSwift
 //MARK - model class for posts
-final class Post: Object {
+public final class Post: Object {
     @objc dynamic var timestamp = Date()
     @objc dynamic var body: String?
     @objc dynamic var imageThumbnails = [UIImage]()
     let imageDataFilenames = List<String>()
     
-    override static func ignoredProperties() -> [String] {
+    override public static func ignoredProperties() -> [String] {
         return ["imageThumbnails"]
     }
 }
