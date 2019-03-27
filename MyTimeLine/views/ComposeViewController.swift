@@ -26,6 +26,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView3: UIImageView!
     @IBOutlet var addButtonImageView: UIImageView!
+    let imagePicker = UIImagePickerController()
     var imageViews = [UIImageView]()
     
     
@@ -99,7 +100,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK - image picker methods
     @IBAction func showImagePicker () {
-        let imagePicker = UIImagePickerController()
+        
         imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         imagePicker.sourceType = .photoLibrary
         self.present(imagePicker, animated: true, completion: nil)
