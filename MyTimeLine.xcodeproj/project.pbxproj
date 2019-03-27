@@ -202,7 +202,7 @@
 				F39FF01922498D050004F265 /* AppDelegate.swift */,
 				F39FF0452249B0DA0004F265 /* models */,
 				F39FF03E2249991E0004F265 /* views */,
-				F3BABB86224AEB4A00E618DC /* seed data */,
+				F3BABB86224AEB4A00E618DC /* test Data */,
 				F39FF01D22498D050004F265 /* Main.storyboard */,
 				F39FF02022498D070004F265 /* Assets.xcassets */,
 				F39FF02222498D070004F265 /* LaunchScreen.storyboard */,
@@ -252,16 +252,16 @@
 			path = MyTimeLineUITests;
 			sourceTree = "<group>";
 		};
-		F3BABB86224AEB4A00E618DC /* seed data */ = {
+		F3BABB86224AEB4A00E618DC /* test Data */ = {
 			isa = PBXGroup;
 			children = (
-				F3BABB8B224AEBB100E618DC /* data */,
+				F3BABB8B224AEBB100E618DC /* seed */,
 				F3BABB87224AEB7900E618DC /* SeedData.swift */,
 			);
-			path = "seed data";
+			path = "test Data";
 			sourceTree = "<group>";
 		};
-		F3BABB8B224AEBB100E618DC /* data */ = {
+		F3BABB8B224AEBB100E618DC /* seed */ = {
 			isa = PBXGroup;
 			children = (
 				F3BABB90224AECCF00E618DC /* seed_posts.plist */,
@@ -276,7 +276,7 @@
 				F3BABB9A224AEDED00E618DC /* 8.jpg */,
 				F3BABB99224AEDED00E618DC /* 9.jpg */,
 			);
-			path = data;
+			path = seed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

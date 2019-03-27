@@ -37,6 +37,7 @@ class PostViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection s: Int) -> Int {
+        
         let section = Section(rawValue: s)!
         switch section {
         case .body:

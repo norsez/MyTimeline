@@ -88,6 +88,7 @@ class TimelineViewController: UITableViewController {
             var updatedItems = self.items.value
             updatedItems.insert(post, at: 0)
             self.items.accept(updatedItems)
+            self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         }
     }
     
