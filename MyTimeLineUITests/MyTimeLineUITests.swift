@@ -94,6 +94,22 @@ class MyTimeLineUITests: XCTestCase {
         XCTAssertTrue( app.navigationBars["Post"].exists, "Close full image view returns to Post screen")
     }
     
+    func testSearch() {
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let searchField = app.searchFields["Search"]
+        app.swipeDown()
+        waitForExistence(on: searchField)
+        XCTAssertTrue(searchField.exists)
+        app.searchFields["Search"].tap()
+        
+        searchField.typeText("ideal")
+        let foundCell = app.tables/*@START_MENU_TOKEN@*/.staticTexts["post body"]/*[[".cells.staticTexts[\"post body\"]",".staticTexts[\"post body\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        waitForExistence(on: foundCell)
+        
+    }
+    
     //MARK - wait for an element to appear on screen for x seconds.
     func waitForExistence(on object: Any) {
         let exists = NSPredicate(format: "exists == 1")
