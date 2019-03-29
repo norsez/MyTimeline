@@ -12,7 +12,7 @@ import UIKit
 //MARK: quick and dirty way to generate hash
 extension String {
     //@return a random string of length len
-    static func randomString(withLength len: Int) -> String {
+    public static func randomString(withLength len: Int) -> String {
         let LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var result = ""
         for _ in 0..<len {
@@ -23,7 +23,7 @@ extension String {
     }
     
     //@return true if trimmed equals an empty string
-    var isTrimmedEmpty: Bool {
+    public var isTrimmedEmpty: Bool {
         get {
             return self.trimmingCharacters(in: CharacterSet(charactersIn: " \t\n\r")).count == 0
         }
@@ -40,7 +40,7 @@ extension String {
 extension Date {
     
     //@return data format used in the UI mockup.
-    var asTimelineTime: String {
+    public var asTimelineTime: String {
         get{
             let df = DateFormatter()
             df.dateFormat = "h:mm a"
