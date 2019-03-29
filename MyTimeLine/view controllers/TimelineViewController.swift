@@ -14,40 +14,17 @@ import RealmSwift
 //MARK - view for timeline
 class TimelineViewController: UITableViewController {
     let CELLID = "TimelineCell"
+    let viewModel = TimelineViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     var disposeBag = DisposeBag()
-    var items = BehaviorRelay<[Post]>(value:[])
-    var postViewModels = [PostTimelineViewModel]()
-    var searchResult = [PostTimelineViewModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearch()
-        
-        //reload when items are changed.
-        self.items.asObservable()
-            .subscribe(onNext: { [weak self] (posts) in
-                self?.tableView.reloadData()
-            })
-            .disposed(by: disposeBag)
-        
-        
-        //load database
-        do {
-            let realm = try Realm()
-            let results = realm.objects(Post.self).sorted { (p1, p2) -> Bool in
-                return p1.timestamp.compare(p2.timestamp) == ComparisonResult.orderedDescending
-            }
-            let posts = Array(results.map({ (p) -> Post in
-                return p
-            }))
-            self.items.accept(posts)
-            self.postViewModels = self.items.value.compactMap({ (post) -> PostTimelineViewModel? in
-                return PostTimelineViewModel(with: post)
-            })
-        }catch {
-            self.alert(error: error)
-        }
+        bindViewToViewModel()
+        createCallback()
+        self.viewModel.loadPosts()
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
@@ -61,35 +38,33 @@ class TimelineViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering(){
-            return self.searchResult.count
+            return self.viewModel.searchResults.count
         }else {
-            return self.items.value.count
+            return self.viewModel.posts.count
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.CELLID , for: indexPath) as! TimelineCell
         
-        let postViewModel: PostTimelineViewModel
+        let post: Post
         if isFiltering(){
-            postViewModel = self.searchResult[indexPath.row]
+            post = self.viewModel.searchResults[indexPath.row]
         }else {
-            postViewModel = self.postViewModels[indexPath.row]
+            post = self.viewModel.posts[indexPath.row]
         }
         
-        postViewModel.configure(view: cell)
+        cell.display(post: post)
         
         return cell
     }
     
     //MARK - action for a new post created.
     func onDidCreateNewPost (_ post: Post) {
-        
-        var updatedItems = self.items.value
+        var updatedItems = self.viewModel.posts
         updatedItems.insert(post, at: 0)
-        self.items.accept(updatedItems)
+        self.viewModel.posts = updatedItems
         self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
-        
     }
     
     //MARK - segue
@@ -98,7 +73,12 @@ class TimelineViewController: UITableViewController {
             if let ctrl = segue.destination as? PostViewController,
                 let index = tableView.indexPathForSelectedRow {
                 
-                let post = self.items.value[index.row]
+                let post: Post
+                if isFiltering() {
+                    post = self.viewModel.searchResults[index.row]
+                }else {
+                    post = self.viewModel.posts[index.row]
+                }
                 ctrl.post = post
             }
         }else if segue.identifier == "Compose" {
@@ -125,10 +105,8 @@ extension TimelineViewController: UISearchResultsUpdating {
     }
     
     func filterContentForSearchText(_ searchText: String) {
-        self.searchResult = self.items.value.filter({( post : Post) -> Bool in
+        self.viewModel.searchResults = self.viewModel.posts.filter({( post : Post) -> Bool in
             return post.body?.lowercased().contains(searchText.lowercased()) ?? false
-        }).compactMap({ (post) -> PostTimelineViewModel? in
-            return PostTimelineViewModel(with: post)
         })
         
         tableView.reloadData()
@@ -143,4 +121,28 @@ extension TimelineViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
+    
+    //MARK: Rx binding
+    func createCallback() {
+        self.viewModel.errorMessage.asObservable()
+            .bind { [weak self] msg in
+                if let msg = msg {
+                    self?.alert(message: msg)
+                }
+            }.disposed(by: disposeBag)
+        
+        self.viewModel.viewNeedsRefresh.asObservable()
+            .bind { [weak self]
+                needs in
+                if needs {
+                    self?.tableView.reloadData()
+                }
+            }.disposed(by: disposeBag)
+        
+    }
+    
+    func bindViewToViewModel () {
+        //do nothing
+    }
+    
 }
