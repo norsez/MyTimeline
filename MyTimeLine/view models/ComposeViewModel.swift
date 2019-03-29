@@ -49,7 +49,7 @@ class ComposeViewModel {
         
         //actually save the new post.
         do {
-            let realm = try Realm()
+            let realm = RealmProvider.realm()
             try realm.write {
                 realm.add(post)
             }

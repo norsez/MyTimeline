@@ -22,7 +22,7 @@ class TimelineViewModel {
     func loadPosts () {
         
         do {
-            let realm = try Realm()
+            let realm = RealmProvider.realm()
             let results = realm.objects(Post.self).sorted { (p1, p2) -> Bool in
                 return p1.timestamp.compare(p2.timestamp) == ComparisonResult.orderedDescending
             }
@@ -36,12 +36,4 @@ class TimelineViewModel {
         }
     }
     
-}
-
-//MARK: Timelinecell display
-extension TimelineViewModel {
-    
-    func configure(cell: TimelineCell) {
-        
-    }
 }

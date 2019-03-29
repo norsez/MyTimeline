@@ -13,7 +13,7 @@ import RealmSwift
 class SeedData {
     let HAS_SEED_DATA = "HAS_SEED_DATA"
     func dropDatabase () throws {
-        let realm = try Realm()
+        let realm = RealmProvider.realm()
         try realm.write {
             realm.deleteAll()
         }
@@ -76,7 +76,7 @@ class SeedData {
         let posts = self.makeSeedPosts(with: seed, imageNames: imageNames)
         
         //add to database
-        let realm = try Realm()
+        let realm = RealmProvider.realm()
         try realm.write {
             posts.forEach({ (p) in
                 realm.add(p)

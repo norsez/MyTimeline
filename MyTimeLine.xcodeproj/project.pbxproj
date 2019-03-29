@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		27F03E2218F60C69AEA01911 /* Pods_MyTimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */; };
+		50EDD6E673A855CC19A852A8 /* Pods_MyTimeLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0CBD760FF7A6C3043FE28E /* Pods_MyTimeLineUITests.framework */; };
 		783023161EBAA6B8C4703339 /* Pods_MyTimeLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */; };
-		A87495CBDC950AB6D2A2FFAE /* Pods_MyTimeLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */; };
 		F3137651224D8F2600333FBB /* MyTimeLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB7C224AE97700E618DC /* MyTimeLineUITests.swift */; };
 		F3137658224DA5C600333FBB /* ComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3137657224DA5C600333FBB /* ComposeViewModel.swift */; };
-		F313765A224DA5D900333FBB /* PostViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3137659224DA5D900333FBB /* PostViewViewModel.swift */; };
 		F313765E224E652100333FBB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F313765D224E652100333FBB /* ComposeViewController.swift */; };
 		F3137660224E712100333FBB /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F313765F224E712100333FBB /* TimelineViewModel.swift */; };
+		F3966808224ED1B1007B1664 /* TestViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3966807224ED1B1007B1664 /* TestViewModels.swift */; };
+		F396680A224EDDE2007B1664 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3966809224EDDE2007B1664 /* RealmProvider.swift */; };
 		F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF01922498D050004F265 /* AppDelegate.swift */; };
 		F39FF01F22498D050004F265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF01D22498D050004F265 /* Main.storyboard */; };
 		F39FF02122498D070004F265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02022498D070004F265 /* Assets.xcassets */; };
 		F39FF02422498D070004F265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02222498D070004F265 /* LaunchScreen.storyboard */; };
-		F39FF02F22498D070004F265 /* MyTimeLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF02E22498D070004F265 /* MyTimeLineTests.swift */; };
 		F39FF03A22498D2D0004F265 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F39FF03922498D2D0004F265 /* Podfile */; };
 		F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF03B2249990C0004F265 /* TimelineViewController.swift */; };
 		F39FF040224999540004F265 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF03F224999540004F265 /* PostViewController.swift */; };
@@ -72,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0CBD760FF7A6C3043FE28E /* Pods_MyTimeLineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AC95D6721C35376610DF36 /* Pods-MyTimeLineTests.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.uitest.xcconfig"; sourceTree = "<group>"; };
 		17A06A68426E5586C2A5DCBF /* Pods-MyTimeLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61845C25B76B4A06CE1CA581 /* Pods-MyTimeLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,17 +80,17 @@
 		6CB3E1DEE53AE5CA83310ECC /* Pods-MyTimeLineUITests.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.uitest.xcconfig"; sourceTree = "<group>"; };
 		75C3B4C5BF2C1064A9633B09 /* Pods-MyTimeLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.release.xcconfig"; sourceTree = "<group>"; };
 		806A36A9AEADC9948E82C22F /* Pods-MyTimeLineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2AED6D58C5775E452C1659 /* Pods-MyTimeLine.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.uitest.xcconfig"; sourceTree = "<group>"; };
 		BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC850588BA026B11490F175F /* Pods-MyTimeLineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3137652224D937500333FBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		F3137657224DA5C600333FBB /* ComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewModel.swift; sourceTree = "<group>"; };
-		F3137659224DA5D900333FBB /* PostViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewViewModel.swift; sourceTree = "<group>"; };
 		F313765D224E652100333FBB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		F313765F224E712100333FBB /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		F394F28F224C3EEE00C043B3 /* MyTimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3966807224ED1B1007B1664 /* TestViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModels.swift; sourceTree = "<group>"; };
+		F3966809224EDDE2007B1664 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		F39FF01622498D050004F265 /* MyTimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01922498D050004F265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39FF01E22498D050004F265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		F39FF02322498D070004F265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F39FF02522498D070004F265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F39FF02A22498D070004F265 /* MyTimeLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F39FF02E22498D070004F265 /* MyTimeLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLineTests.swift; sourceTree = "<group>"; };
 		F39FF03022498D070004F265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F39FF03922498D2D0004F265 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F39FF03B2249990C0004F265 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87495CBDC950AB6D2A2FFAE /* Pods_MyTimeLineUITests.framework in Frameworks */,
+				50EDD6E673A855CC19A852A8 /* Pods_MyTimeLineUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 			children = (
 				AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */,
 				BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */,
-				A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */,
+				0F0CBD760FF7A6C3043FE28E /* Pods_MyTimeLineUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				F3137657224DA5C600333FBB /* ComposeViewModel.swift */,
-				F3137659224DA5D900333FBB /* PostViewViewModel.swift */,
 				F313765F224E712100333FBB /* TimelineViewModel.swift */,
 			);
 			path = "view models";
@@ -244,7 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				F3BABB672249B8DA00E618DC /* TestUtils.swift */,
-				F39FF02E22498D070004F265 /* MyTimeLineTests.swift */,
+				F3966807224ED1B1007B1664 /* TestViewModels.swift */,
 				F39FF03022498D070004F265 /* Info.plist */,
 			);
 			path = MyTimeLineTests;
@@ -264,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				F39FF0462249B0EE0004F265 /* Post.swift */,
+				F3966809224EDDE2007B1664 /* RealmProvider.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -564,13 +564,13 @@
 				F3BABB88224AEB7900E618DC /* SeedData.swift in Sources */,
 				F39FF040224999540004F265 /* PostViewController.swift in Sources */,
 				F3137660224E712100333FBB /* TimelineViewModel.swift in Sources */,
+				F396680A224EDDE2007B1664 /* RealmProvider.swift in Sources */,
 				F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */,
 				F3137658224DA5C600333FBB /* ComposeViewModel.swift in Sources */,
 				F3BABB6F2249EFBE00E618DC /* TimelineCell.swift in Sources */,
 				F39FF0472249B0EE0004F265 /* Post.swift in Sources */,
 				F3BABB71224A5D8800E618DC /* PostCell.swift in Sources */,
 				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
-				F313765A224DA5D900333FBB /* PostViewViewModel.swift in Sources */,
 				F313765E224E652100333FBB /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,8 +579,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39FF02F22498D070004F265 /* MyTimeLineTests.swift in Sources */,
 				F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */,
+				F3966808224ED1B1007B1664 /* TestViewModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +622,6 @@
 		F313764D224D88BB00333FBB /* UITest */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -703,7 +702,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14AC95D6721C35376610DF36 /* Pods-MyTimeLineTests.uitest.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J69NTUKV3;
@@ -711,7 +709,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -786,7 +783,6 @@
 		F39FF03122498D070004F265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -847,7 +843,6 @@
 		F39FF03222498D070004F265 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -942,7 +937,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17A06A68426E5586C2A5DCBF /* Pods-MyTimeLineTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J69NTUKV3;
@@ -950,7 +944,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -964,7 +957,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6691F4FEAD55239BE50E069E /* Pods-MyTimeLineTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J69NTUKV3;
@@ -972,7 +964,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
