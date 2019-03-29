@@ -11,6 +11,9 @@
 		783023161EBAA6B8C4703339 /* Pods_MyTimeLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */; };
 		A87495CBDC950AB6D2A2FFAE /* Pods_MyTimeLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */; };
 		F3137651224D8F2600333FBB /* MyTimeLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB7C224AE97700E618DC /* MyTimeLineUITests.swift */; };
+		F3137656224DA5BB00333FBB /* PostTimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3137655224DA5BB00333FBB /* PostTimelineViewModel.swift */; };
+		F3137658224DA5C600333FBB /* PostCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3137657224DA5C600333FBB /* PostCreate.swift */; };
+		F313765A224DA5D900333FBB /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3137659224DA5D900333FBB /* PostView.swift */; };
 		F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF01922498D050004F265 /* AppDelegate.swift */; };
 		F39FF01F22498D050004F265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF01D22498D050004F265 /* Main.storyboard */; };
 		F39FF02122498D070004F265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02022498D070004F265 /* Assets.xcassets */; };
@@ -82,6 +85,9 @@
 		BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC850588BA026B11490F175F /* Pods-MyTimeLineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3137652224D937500333FBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
+		F3137655224DA5BB00333FBB /* PostTimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTimelineViewModel.swift; sourceTree = "<group>"; };
+		F3137657224DA5C600333FBB /* PostCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreate.swift; sourceTree = "<group>"; };
+		F3137659224DA5D900333FBB /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		F394F28F224C3EEE00C043B3 /* MyTimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01622498D050004F265 /* MyTimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01922498D050004F265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +178,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3137653224DA4ED00333FBB /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F39FF03B2249990C0004F265 /* TimelineViewController.swift */,
+				F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */,
+				F39FF03F224999540004F265 /* PostViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		F3137654224DA59F00333FBB /* view models */ = {
+			isa = PBXGroup;
+			children = (
+				F3137655224DA5BB00333FBB /* PostTimelineViewModel.swift */,
+				F3137657224DA5C600333FBB /* PostCreate.swift */,
+				F3137659224DA5D900333FBB /* PostView.swift */,
+			);
+			path = "view models";
+			sourceTree = "<group>";
+		};
 		F39FF00D22498D050004F265 = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +228,9 @@
 				F39FF01922498D050004F265 /* AppDelegate.swift */,
 				F3BABB652249B77400E618DC /* Utils.swift */,
 				F39FF0452249B0DA0004F265 /* models */,
+				F3137654224DA59F00333FBB /* view models */,
 				F39FF03E2249991E0004F265 /* views */,
+				F3137653224DA4ED00333FBB /* view controllers */,
 				F3BABB86224AEB4A00E618DC /* test Data */,
 				F39FF01D22498D050004F265 /* Main.storyboard */,
 				F39FF02022498D070004F265 /* Assets.xcassets */,
@@ -225,9 +253,6 @@
 		F39FF03E2249991E0004F265 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				F39FF03B2249990C0004F265 /* TimelineViewController.swift */,
-				F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */,
-				F39FF03F224999540004F265 /* PostViewController.swift */,
 				F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */,
 				F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */,
 				F3BABB70224A5D8800E618DC /* PostCell.swift */,
@@ -539,10 +564,13 @@
 				F3BABB88224AEB7900E618DC /* SeedData.swift in Sources */,
 				F39FF040224999540004F265 /* PostViewController.swift in Sources */,
 				F39FF03C2249990C0004F265 /* TimelineViewController.swift in Sources */,
+				F3137658224DA5C600333FBB /* PostCreate.swift in Sources */,
 				F3BABB6F2249EFBE00E618DC /* TimelineCell.swift in Sources */,
 				F39FF0472249B0EE0004F265 /* Post.swift in Sources */,
 				F3BABB71224A5D8800E618DC /* PostCell.swift in Sources */,
 				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
+				F3137656224DA5BB00333FBB /* PostTimelineViewModel.swift in Sources */,
+				F313765A224DA5D900333FBB /* PostView.swift in Sources */,
 				F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

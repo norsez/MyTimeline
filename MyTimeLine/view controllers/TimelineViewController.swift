@@ -17,7 +17,8 @@ class TimelineViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var disposeBag = DisposeBag()
     var items = BehaviorRelay<[Post]>(value:[])
-    var searchResult = [Post]()
+    var postViewModels = [PostTimelineViewModel]()
+    var searchResult = [PostTimelineViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,9 @@ class TimelineViewController: UITableViewController {
                 return p
             }))
             self.items.accept(posts)
+            self.postViewModels = self.items.value.compactMap({ (post) -> PostTimelineViewModel? in
+                return PostTimelineViewModel(with: post)
+            })
         }catch {
             self.alert(error: error)
         }
@@ -70,14 +74,14 @@ class TimelineViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.CELLID , for: indexPath) as! TimelineCell
         
-        let post: Post
+        let postViewModel: PostTimelineViewModel
         if isFiltering(){
-            post = self.searchResult[indexPath.row]
+            postViewModel = self.searchResult[indexPath.row]
         }else {
-            post = self.items.value[indexPath.row]
+            postViewModel = self.postViewModels[indexPath.row]
         }
         
-        cell.set(post: post)
+        postViewModel.configure(view: cell)
         
         return cell
     }
@@ -119,6 +123,8 @@ extension TimelineViewController: UISearchResultsUpdating {
     func filterContentForSearchText(_ searchText: String) {
         self.searchResult = self.items.value.filter({( post : Post) -> Bool in
             return post.body?.lowercased().contains(searchText.lowercased()) ?? false
+        }).compactMap({ (post) -> PostTimelineViewModel? in
+            return PostTimelineViewModel(with: post)
         })
         
         tableView.reloadData()
