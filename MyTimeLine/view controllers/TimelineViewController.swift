@@ -31,10 +31,6 @@ class TimelineViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
         
-        //listen for newly an added post
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidCreateNewPost(_:)), name: Notification.Name.DataDidCreateNewPost, object: nil)
-        
-        
         
         //load database
         do {
@@ -86,14 +82,14 @@ class TimelineViewController: UITableViewController {
         return cell
     }
     
-    //MARK - listen for new post created.
-    @objc func onDidCreateNewPost (_ notification: Notification) {
-        if let post = notification.userInfo?["post"] as? Post {
-            var updatedItems = self.items.value
-            updatedItems.insert(post, at: 0)
-            self.items.accept(updatedItems)
-            self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
-        }
+    //MARK - action for a new post created.
+    func onDidCreateNewPost (_ post: Post) {
+        
+        var updatedItems = self.items.value
+        updatedItems.insert(post, at: 0)
+        self.items.accept(updatedItems)
+        self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+        
     }
     
     //MARK - segue
@@ -104,6 +100,14 @@ class TimelineViewController: UITableViewController {
                 
                 let post = self.items.value[index.row]
                 ctrl.post = post
+            }
+        }else if segue.identifier == "Compose" {
+            if let ctrl = segue.destination as? ComposeViewController {
+                ctrl.viewModel.newPostCreated.asObservable().subscribe(onNext: { (post) in
+                    if let post = post {
+                        self.onDidCreateNewPost(post)
+                    }
+                }).disposed(by: disposeBag)
             }
         }
     }

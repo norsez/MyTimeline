@@ -88,7 +88,7 @@
                     <navigationItem key="navigationItem" title="Timeline" id="D1I-4G-C8e">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="768-cZ-dDu">
                             <connections>
-                                <segue destination="nxi-so-o4G" kind="popoverPresentation" popoverAnchorBarButtonItem="768-cZ-dDu" id="wpZ-qt-FzD">
+                                <segue destination="nxi-so-o4G" kind="popoverPresentation" identifier="Compose" popoverAnchorBarButtonItem="768-cZ-dDu" id="wpZ-qt-FzD">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                                 </segue>
                             </connections>
