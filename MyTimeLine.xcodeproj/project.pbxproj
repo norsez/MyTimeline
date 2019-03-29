@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04B6B122FDEE99C78F6B474A /* Pods_MyTimeLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */; };
 		27F03E2218F60C69AEA01911 /* Pods_MyTimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */; };
 		783023161EBAA6B8C4703339 /* Pods_MyTimeLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */; };
-		F394F285224BC70900C043B3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
+		A87495CBDC950AB6D2A2FFAE /* Pods_MyTimeLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */; };
+		F3137651224D8F2600333FBB /* MyTimeLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB7C224AE97700E618DC /* MyTimeLineUITests.swift */; };
 		F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF01922498D050004F265 /* AppDelegate.swift */; };
 		F39FF01F22498D050004F265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF01D22498D050004F265 /* Main.storyboard */; };
 		F39FF02122498D070004F265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02022498D070004F265 /* Assets.xcassets */; };
@@ -22,57 +22,44 @@
 		F39FF0472249B0EE0004F265 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF0462249B0EE0004F265 /* Post.swift */; };
 		F3BABB662249B77400E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
 		F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB672249B8DA00E618DC /* TestUtils.swift */; };
-		F3BABB692249B96000E618DC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB652249B77400E618DC /* Utils.swift */; };
 		F3BABB6B2249D01C00E618DC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6A2249D01C00E618DC /* ComposeViewController.swift */; };
 		F3BABB6D2249D9F400E618DC /* PlacehodlerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */; };
 		F3BABB6F2249EFBE00E618DC /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */; };
 		F3BABB71224A5D8800E618DC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB70224A5D8800E618DC /* PostCell.swift */; };
-		F3BABB7D224AE97700E618DC /* MyTimeLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB7C224AE97700E618DC /* MyTimeLineUITests.swift */; };
 		F3BABB88224AEB7900E618DC /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BABB87224AEB7900E618DC /* SeedData.swift */; };
 		F3BABB91224AECCF00E618DC /* seed_posts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB90224AECCF00E618DC /* seed_posts.plist */; };
 		F3BABB92224AECCF00E618DC /* seed_posts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB90224AECCF00E618DC /* seed_posts.plist */; };
-		F3BABB93224AECCF00E618DC /* seed_posts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB90224AECCF00E618DC /* seed_posts.plist */; };
 		F3BABB9E224AEDEE00E618DC /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB94224AEDEC00E618DC /* 6.jpg */; };
 		F3BABB9F224AEDEE00E618DC /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB94224AEDEC00E618DC /* 6.jpg */; };
-		F3BABBA0224AEDEE00E618DC /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB94224AEDEC00E618DC /* 6.jpg */; };
 		F3BABBA1224AEDEE00E618DC /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB95224AEDEC00E618DC /* 1.jpg */; };
 		F3BABBA2224AEDEE00E618DC /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB95224AEDEC00E618DC /* 1.jpg */; };
-		F3BABBA3224AEDEE00E618DC /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB95224AEDEC00E618DC /* 1.jpg */; };
 		F3BABBA4224AEDEE00E618DC /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB96224AEDEC00E618DC /* 3.jpg */; };
 		F3BABBA5224AEDEE00E618DC /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB96224AEDEC00E618DC /* 3.jpg */; };
-		F3BABBA6224AEDEE00E618DC /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB96224AEDEC00E618DC /* 3.jpg */; };
 		F3BABBA7224AEDEE00E618DC /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB97224AEDED00E618DC /* 5.jpg */; };
 		F3BABBA8224AEDEE00E618DC /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB97224AEDED00E618DC /* 5.jpg */; };
-		F3BABBA9224AEDEE00E618DC /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB97224AEDED00E618DC /* 5.jpg */; };
 		F3BABBAA224AEDEE00E618DC /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB98224AEDED00E618DC /* 4.jpg */; };
 		F3BABBAB224AEDEE00E618DC /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB98224AEDED00E618DC /* 4.jpg */; };
-		F3BABBAC224AEDEE00E618DC /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB98224AEDED00E618DC /* 4.jpg */; };
 		F3BABBAD224AEDEE00E618DC /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB99224AEDED00E618DC /* 9.jpg */; };
 		F3BABBAE224AEDEE00E618DC /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB99224AEDED00E618DC /* 9.jpg */; };
-		F3BABBAF224AEDEE00E618DC /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB99224AEDED00E618DC /* 9.jpg */; };
 		F3BABBB0224AEDEE00E618DC /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9A224AEDED00E618DC /* 8.jpg */; };
 		F3BABBB1224AEDEE00E618DC /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9A224AEDED00E618DC /* 8.jpg */; };
-		F3BABBB2224AEDEE00E618DC /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9A224AEDED00E618DC /* 8.jpg */; };
 		F3BABBB3224AEDEE00E618DC /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9B224AEDED00E618DC /* 0.jpg */; };
 		F3BABBB4224AEDEE00E618DC /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9B224AEDED00E618DC /* 0.jpg */; };
-		F3BABBB5224AEDEE00E618DC /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9B224AEDED00E618DC /* 0.jpg */; };
 		F3BABBB6224AEDEE00E618DC /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9C224AEDEE00E618DC /* 2.jpg */; };
 		F3BABBB7224AEDEE00E618DC /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9C224AEDEE00E618DC /* 2.jpg */; };
-		F3BABBB8224AEDEE00E618DC /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9C224AEDEE00E618DC /* 2.jpg */; };
 		F3BABBB9224AEDEE00E618DC /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9D224AEDEE00E618DC /* 7.jpg */; };
 		F3BABBBA224AEDEE00E618DC /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9D224AEDEE00E618DC /* 7.jpg */; };
-		F3BABBBB224AEDEE00E618DC /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3BABB9D224AEDEE00E618DC /* 7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F39FF02B22498D070004F265 /* PBXContainerItemProxy */ = {
+		F394F294224C3EEE00C043B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F39FF00E22498D050004F265 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F39FF01522498D050004F265;
 			remoteInfo = MyTimeLine;
 		};
-		F3BABB7F224AE97700E618DC /* PBXContainerItemProxy */ = {
+		F39FF02B22498D070004F265 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F39FF00E22498D050004F265 /* Project object */;
 			proxyType = 1;
@@ -82,15 +69,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14AC95D6721C35376610DF36 /* Pods-MyTimeLineTests.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.uitest.xcconfig"; sourceTree = "<group>"; };
 		17A06A68426E5586C2A5DCBF /* Pods-MyTimeLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61845C25B76B4A06CE1CA581 /* Pods-MyTimeLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.debug.xcconfig"; sourceTree = "<group>"; };
 		6691F4FEAD55239BE50E069E /* Pods-MyTimeLineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineTests/Pods-MyTimeLineTests.release.xcconfig"; sourceTree = "<group>"; };
+		6CB3E1DEE53AE5CA83310ECC /* Pods-MyTimeLineUITests.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.uitest.xcconfig"; sourceTree = "<group>"; };
 		75C3B4C5BF2C1064A9633B09 /* Pods-MyTimeLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.release.xcconfig"; sourceTree = "<group>"; };
 		806A36A9AEADC9948E82C22F /* Pods-MyTimeLineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A1C09556ED8566A01BAA1B4E /* Pods_MyTimeLineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB92C06BE95B35E4F006F854 /* Pods_MyTimeLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2AED6D58C5775E452C1659 /* Pods-MyTimeLine.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLine.uitest.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine.uitest.xcconfig"; sourceTree = "<group>"; };
 		BCD4546A883E9A5CF3D9E152 /* Pods_MyTimeLineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTimeLineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC850588BA026B11490F175F /* Pods-MyTimeLineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTimeLineUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyTimeLineUITests/Pods-MyTimeLineUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F3137652224D937500333FBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
+		F394F28F224C3EEE00C043B3 /* MyTimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01622498D050004F265 /* MyTimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01922498D050004F265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39FF01E22498D050004F265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,7 +102,6 @@
 		F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacehodlerText.swift; sourceTree = "<group>"; };
 		F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		F3BABB70224A5D8800E618DC /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		F3BABB7A224AE97600E618DC /* MyTimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BABB7C224AE97700E618DC /* MyTimeLineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeLineUITests.swift; sourceTree = "<group>"; };
 		F3BABB7E224AE97700E618DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3BABB87224AEB7900E618DC /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
@@ -128,6 +119,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F394F28C224C3EEE00C043B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87495CBDC950AB6D2A2FFAE /* Pods_MyTimeLineUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F39FF01322498D050004F265 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,14 +143,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3BABB77224AE97600E618DC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04B6B122FDEE99C78F6B474A /* Pods_MyTimeLineUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -164,6 +155,9 @@
 				6691F4FEAD55239BE50E069E /* Pods-MyTimeLineTests.release.xcconfig */,
 				DC850588BA026B11490F175F /* Pods-MyTimeLineUITests.debug.xcconfig */,
 				806A36A9AEADC9948E82C22F /* Pods-MyTimeLineUITests.release.xcconfig */,
+				BB2AED6D58C5775E452C1659 /* Pods-MyTimeLine.uitest.xcconfig */,
+				14AC95D6721C35376610DF36 /* Pods-MyTimeLineTests.uitest.xcconfig */,
+				6CB3E1DEE53AE5CA83310ECC /* Pods-MyTimeLineUITests.uitest.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -181,6 +175,7 @@
 		F39FF00D22498D050004F265 = {
 			isa = PBXGroup;
 			children = (
+				F3137652224D937500333FBB /* README.md */,
 				F39FF01822498D050004F265 /* MyTimeLine */,
 				F39FF02D22498D070004F265 /* MyTimeLineTests */,
 				F3BABB7B224AE97700E618DC /* MyTimeLineUITests */,
@@ -196,7 +191,7 @@
 			children = (
 				F39FF01622498D050004F265 /* MyTimeLine.app */,
 				F39FF02A22498D070004F265 /* MyTimeLineTests.xctest */,
-				F3BABB7A224AE97600E618DC /* MyTimeLineUITests.xctest */,
+				F394F28F224C3EEE00C043B3 /* MyTimeLineUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				F39FF01922498D050004F265 /* AppDelegate.swift */,
+				F3BABB652249B77400E618DC /* Utils.swift */,
 				F39FF0452249B0DA0004F265 /* models */,
 				F39FF03E2249991E0004F265 /* views */,
 				F3BABB86224AEB4A00E618DC /* test Data */,
@@ -243,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				F39FF0462249B0EE0004F265 /* Post.swift */,
-				F3BABB652249B77400E618DC /* Utils.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -287,6 +282,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F394F28E224C3EEE00C043B3 /* MyTimeLineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F394F296224C3EEE00C043B3 /* Build configuration list for PBXNativeTarget "MyTimeLineUITests" */;
+			buildPhases = (
+				926167C747494F152A04A3A4 /* [CP] Check Pods Manifest.lock */,
+				F394F28B224C3EEE00C043B3 /* Sources */,
+				F394F28C224C3EEE00C043B3 /* Frameworks */,
+				F394F28D224C3EEE00C043B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F394F295224C3EEE00C043B3 /* PBXTargetDependency */,
+			);
+			name = MyTimeLineUITests;
+			productName = MyTimeLineUITests;
+			productReference = F394F28F224C3EEE00C043B3 /* MyTimeLineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F39FF01522498D050004F265 /* MyTimeLine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F39FF03322498D070004F265 /* Build configuration list for PBXNativeTarget "MyTimeLine" */;
@@ -325,25 +339,6 @@
 			productReference = F39FF02A22498D070004F265 /* MyTimeLineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F3BABB79224AE97600E618DC /* MyTimeLineUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3BABB81224AE97700E618DC /* Build configuration list for PBXNativeTarget "MyTimeLineUITests" */;
-			buildPhases = (
-				659A43EAC87108DD6C6B8D6C /* [CP] Check Pods Manifest.lock */,
-				F3BABB76224AE97600E618DC /* Sources */,
-				F3BABB77224AE97600E618DC /* Frameworks */,
-				F3BABB78224AE97600E618DC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F3BABB80224AE97700E618DC /* PBXTargetDependency */,
-			);
-			name = MyTimeLineUITests;
-			productName = MyTimeLineUITests;
-			productReference = F3BABB7A224AE97600E618DC /* MyTimeLineUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -354,14 +349,14 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Bluedot;
 				TargetAttributes = {
+					F394F28E224C3EEE00C043B3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F39FF01522498D050004F265;
+					};
 					F39FF01522498D050004F265 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 					F39FF02922498D070004F265 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = F39FF01522498D050004F265;
-					};
-					F3BABB79224AE97600E618DC = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = F39FF01522498D050004F265;
 					};
@@ -382,12 +377,19 @@
 			targets = (
 				F39FF01522498D050004F265 /* MyTimeLine */,
 				F39FF02922498D070004F265 /* MyTimeLineTests */,
-				F3BABB79224AE97600E618DC /* MyTimeLineUITests */,
+				F394F28E224C3EEE00C043B3 /* MyTimeLineUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F394F28D224C3EEE00C043B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F39FF01422498D050004F265 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,24 +430,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3BABB78224AE97600E618DC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3BABBBB224AEDEE00E618DC /* 7.jpg in Resources */,
-				F3BABBB5224AEDEE00E618DC /* 0.jpg in Resources */,
-				F3BABBAC224AEDEE00E618DC /* 4.jpg in Resources */,
-				F3BABBB8224AEDEE00E618DC /* 2.jpg in Resources */,
-				F3BABBA3224AEDEE00E618DC /* 1.jpg in Resources */,
-				F3BABBAF224AEDEE00E618DC /* 9.jpg in Resources */,
-				F3BABBA9224AEDEE00E618DC /* 5.jpg in Resources */,
-				F3BABBB2224AEDEE00E618DC /* 8.jpg in Resources */,
-				F3BABBA0224AEDEE00E618DC /* 6.jpg in Resources */,
-				F3BABB93224AECCF00E618DC /* seed_posts.plist in Resources */,
-				F3BABBA6224AEDEE00E618DC /* 3.jpg in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -467,7 +451,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		659A43EAC87108DD6C6B8D6C /* [CP] Check Pods Manifest.lock */ = {
+		926167C747494F152A04A3A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,6 +522,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F394F28B224C3EEE00C043B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3137651224D8F2600333FBB /* MyTimeLineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F39FF01222498D050004F265 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,31 +553,21 @@
 			files = (
 				F39FF02F22498D070004F265 /* MyTimeLineTests.swift in Sources */,
 				F3BABB682249B8DA00E618DC /* TestUtils.swift in Sources */,
-				F3BABB692249B96000E618DC /* Utils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3BABB76224AE97600E618DC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3BABB7D224AE97700E618DC /* MyTimeLineUITests.swift in Sources */,
-				F394F285224BC70900C043B3 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F394F295224C3EEE00C043B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F39FF01522498D050004F265 /* MyTimeLine */;
+			targetProxy = F394F294224C3EEE00C043B3 /* PBXContainerItemProxy */;
+		};
 		F39FF02C22498D070004F265 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F39FF01522498D050004F265 /* MyTimeLine */;
 			targetProxy = F39FF02B22498D070004F265 /* PBXContainerItemProxy */;
-		};
-		F3BABB80224AE97700E618DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F39FF01522498D050004F265 /* MyTimeLine */;
-			targetProxy = F3BABB7F224AE97700E618DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -609,6 +591,170 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F313764D224D88BB00333FBB /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"UITEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "UITEST DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = UITest;
+		};
+		F313764E224D88BB00333FBB /* UITest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB2AED6D58C5775E452C1659 /* Pods-MyTimeLine.uitest.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J69NTUKV3;
+				INFOPLIST_FILE = MyTimeLine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = UITest;
+		};
+		F313764F224D88BB00333FBB /* UITest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AC95D6721C35376610DF36 /* Pods-MyTimeLineTests.uitest.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J69NTUKV3;
+				INFOPLIST_FILE = MyTimeLineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTimeLine.app/MyTimeLine";
+			};
+			name = UITest;
+		};
+		F3137650224D88BB00333FBB /* UITest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CB3E1DEE53AE5CA83310ECC /* Pods-MyTimeLineUITests.uitest.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J69NTUKV3;
+				INFOPLIST_FILE = MyTimeLineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTimeLine;
+			};
+			name = UITest;
+		};
+		F394F297224C3EEE00C043B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC850588BA026B11490F175F /* Pods-MyTimeLineUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J69NTUKV3;
+				INFOPLIST_FILE = MyTimeLineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTimeLine;
+			};
+			name = Debug;
+		};
+		F394F298224C3EEE00C043B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806A36A9AEADC9948E82C22F /* Pods-MyTimeLineUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J69NTUKV3;
+				INFOPLIST_FILE = MyTimeLineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTimeLine;
+			};
+			name = Release;
+		};
 		F39FF03122498D070004F265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -808,53 +954,24 @@
 			};
 			name = Release;
 		};
-		F3BABB82224AE97700E618DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC850588BA026B11490F175F /* Pods-MyTimeLineUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J69NTUKV3;
-				INFOPLIST_FILE = MyTimeLineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyTimeLine;
-			};
-			name = Debug;
-		};
-		F3BABB83224AE97700E618DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 806A36A9AEADC9948E82C22F /* Pods-MyTimeLineUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J69NTUKV3;
-				INFOPLIST_FILE = MyTimeLineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = th.co.bluedot.MyTimeLineUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyTimeLine;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F394F296224C3EEE00C043B3 /* Build configuration list for PBXNativeTarget "MyTimeLineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F394F297224C3EEE00C043B3 /* Debug */,
+				F3137650224D88BB00333FBB /* UITest */,
+				F394F298224C3EEE00C043B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F39FF01122498D050004F265 /* Build configuration list for PBXProject "MyTimeLine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F39FF03122498D070004F265 /* Debug */,
+				F313764D224D88BB00333FBB /* UITest */,
 				F39FF03222498D070004F265 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -864,6 +981,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F39FF03422498D070004F265 /* Debug */,
+				F313764E224D88BB00333FBB /* UITest */,
 				F39FF03522498D070004F265 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -873,16 +991,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F39FF03722498D070004F265 /* Debug */,
+				F313764F224D88BB00333FBB /* UITest */,
 				F39FF03822498D070004F265 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3BABB81224AE97700E618DC /* Build configuration list for PBXNativeTarget "MyTimeLineUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3BABB82224AE97700E618DC /* Debug */,
-				F3BABB83224AE97700E618DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

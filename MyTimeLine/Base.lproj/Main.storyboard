@@ -130,6 +130,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JPj-4S-d4R">
                                 <rect key="frame" x="16" y="80" width="343" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" label="body textview"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="hNa-Mo-nPM"/>
                                 </constraints>
@@ -195,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1053.5999999999999" y="884.70764617691157"/>
         </scene>
-        <!--Post View Controller-->
+        <!--Post-->
         <scene sceneID="YTK-5S-Nca">
             <objects>
-                <tableViewController id="YFn-qF-ocb" customClass="PostViewController" customModule="MyTimeLine" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Post" id="YFn-qF-ocb" customClass="PostViewController" customModule="MyTimeLine" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uZ3-ie-5XY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,11 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        //use launch argument to reset database for XCUITest
         let seed = SeedData.shared
-        if !seed.hasSeedData {
+        #if DEBUG
+            try! seed.dropDatabase()
             try! seed.resetAndSeed()
-            seed.markHasSeedData()
-        }
+        #else
+            if !seed.hasSeedData {
+                try! seed.resetAndSeed()
+                seed.markHasSeedData()
+            }
+        #endif
         return true
     }
 
