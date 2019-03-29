@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //use launch argument to reset database for XCUITest
         let seed = SeedData.shared
-        #if DEBUG
+        #if UITEST
             try! seed.dropDatabase()
             try! seed.resetAndSeed()
         #else
