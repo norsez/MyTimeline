@@ -97,7 +97,6 @@ class MyTimeLineUITests: XCTestCase {
     func testSearch() {
         
         let app = XCUIApplication()
-        let tablesQuery = app.tables
         let searchField = app.searchFields["Search"]
         app.swipeDown()
         waitForExistence(on: searchField)

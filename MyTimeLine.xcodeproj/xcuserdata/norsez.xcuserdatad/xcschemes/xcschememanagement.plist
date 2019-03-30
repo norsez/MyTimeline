@@ -7,7 +7,20 @@
 		<key>MyTimeLine.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>11</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F39FF01522498D050004F265</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F39FF02922498D070004F265</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
