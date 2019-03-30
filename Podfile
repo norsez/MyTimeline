@@ -12,7 +12,7 @@ target 'MyTimeLine' do
     pod 'RxRealmDataSources'
     pod 'RealmSwift'
     pod 'SKPhotoBrowser'
-    
+    pod 'RxAnimated'
     target 'MyTimeLineTests' do
         inherit! :search_paths
         # Pods for testing

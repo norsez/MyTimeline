@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //use launch argument to reset database for XCUITest
@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 seed.markHasSeedData()
             }
         #endif
+        
+        
+        //use cache
+        
         return true
     }
 

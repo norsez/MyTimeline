@@ -16,6 +16,7 @@
 		F3137660224E712100333FBB /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F313765F224E712100333FBB /* TimelineViewModel.swift */; };
 		F3966808224ED1B1007B1664 /* TestViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3966807224ED1B1007B1664 /* TestViewModels.swift */; };
 		F396680A224EDDE2007B1664 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3966809224EDDE2007B1664 /* RealmProvider.swift */; };
+		F396680C224F06D5007B1664 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396680B224F06D5007B1664 /* ImageProvider.swift */; };
 		F39FF01A22498D050004F265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FF01922498D050004F265 /* AppDelegate.swift */; };
 		F39FF01F22498D050004F265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FF01D22498D050004F265 /* Main.storyboard */; };
 		F39FF02122498D070004F265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39FF02022498D070004F265 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		F394F28F224C3EEE00C043B3 /* MyTimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3966807224ED1B1007B1664 /* TestViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModels.swift; sourceTree = "<group>"; };
 		F3966809224EDDE2007B1664 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		F396680B224F06D5007B1664 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		F39FF01622498D050004F265 /* MyTimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FF01922498D050004F265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39FF01E22498D050004F265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				F3BABB6C2249D9F400E618DC /* PlacehodlerText.swift */,
 				F3BABB6E2249EFBE00E618DC /* TimelineCell.swift */,
 				F3BABB70224A5D8800E618DC /* PostCell.swift */,
+				F396680B224F06D5007B1664 /* ImageProvider.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyTimeLine/Pods-MyTimeLine-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAnimated/RxAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
@@ -532,6 +536,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
@@ -571,6 +576,7 @@
 				F39FF0472249B0EE0004F265 /* Post.swift in Sources */,
 				F3BABB71224A5D8800E618DC /* PostCell.swift in Sources */,
 				F3BABB662249B77400E618DC /* Utils.swift in Sources */,
+				F396680C224F06D5007B1664 /* ImageProvider.swift in Sources */,
 				F313765E224E652100333FBB /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

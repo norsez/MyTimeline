@@ -89,7 +89,7 @@ extension UIImage {
     
     //load image data as a UIImage
     //@return UIImage or nil
-    static func loadImage(with filename: String) -> UIImage? {
+    static func loadImage(withPostImagefilename filename: String) -> UIImage? {
         
         let fm = FileManager.default
         
@@ -105,4 +105,5 @@ extension UIImage {
             return nil
         }
     }
+    
 }

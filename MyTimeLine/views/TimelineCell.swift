@@ -8,8 +8,8 @@
 
 import UIKit
 import RxSwift
-
-
+import RxCocoa
+import RxAnimated
 //MARK - view for timeline cell
 class TimelineCell: UITableViewCell {
     
@@ -20,19 +20,19 @@ class TimelineCell: UITableViewCell {
     
     var post: Post? = nil
     var lastImageBoxConstraints = [NSLayoutConstraint]()
+    
+    var image1 = Variable<UIImage?>(nil)
+    var image2 = Variable<UIImage?>(nil)
+    var image3 = Variable<UIImage?>(nil)
+    let serialScheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "cell image loading queue")
+    let disposeBag = DisposeBag()
+    
+    
     func display(post: Post) {
         self.post = post
         self.bodyLabel.text = post.body
         self.timestampLabel.text = "\(post.timestamp.asTimelineTime) >"
-        
-        if (self.post?.imageDataFilenames.count ?? 0)  > 0 && (self.post?.imageThumbnails.count ?? 0) == 0 {
-            //cache thumbnails on post model.
-            self.post?.loadThumbnails()
-            
-        }
-        self.layoutImages()
-        
-        
+        self.loadAndDisplayImages()
     }
     
     override func prepareForReuse() {
@@ -44,33 +44,30 @@ class TimelineCell: UITableViewCell {
         self.imageBox.removeConstraints(self.lastImageBoxConstraints)
     }
     
-    func layoutImages() {
-        
-        
-        if (self.post?.imageThumbnails.count ?? 0) > 0 {
-            
-            if self.post?.imageThumbnails.count == 1 {
-                self.arrange1Image()
-            }else if post?.imageThumbnails.count == 2 {
-                self.arrange2Images()
-            }else if self.post?.imageThumbnails.count == 3 {
-                self.arrange3Images()
-            }
-            
-            self.imageBoxHeight.constant = 180
-        }else {
+    func loadAndDisplayImages() {
+        let imageCount = self.post?.imageDataFilenames.count ?? 0
+        switch imageCount {
+        case 0:
             self.imageBoxHeight.constant = 0
+        case 1:
+            self.arrange1Image()
+            self.imageBoxHeight.constant = 180
+        case 2:
+            self.arrange2Images()
+            self.imageBoxHeight.constant = 180
+        case 3:
+            self.arrange3Images()
+            self.imageBoxHeight.constant = 180
+        default:
+            debugPrint("too many images to display. Skip \(imageCount - 3) images")
+            break
         }
-    }
+}
     
     //MARK - picture layout
     func arrange1Image() {
         
-        let iv = UIImageView(image: self.post?.imageThumbnails.first)
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        
+        let iv = crateImageView(for: 0, post: self.post!)
         
         self.imageBox.addSubview(iv)
         let views: [String:Any] = ["iv": iv]
@@ -82,16 +79,8 @@ class TimelineCell: UITableViewCell {
     
     func arrange2Images() {
         
-        let iv = UIImageView(image: self.post?.imageThumbnails[0])
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        let iv2 = UIImageView(image:self.post?.imageThumbnails[1])
-        iv2.clipsToBounds = true
-        iv2.contentMode = .scaleAspectFill
-        iv2.translatesAutoresizingMaskIntoConstraints = false
+        let iv = crateImageView(for: 0, post: self.post!)
+        let iv2 = crateImageView(for: 1, post: self.post!)
         
         self.imageBox.addSubview(iv)
         self.imageBox.addSubview(iv2)
@@ -104,23 +93,9 @@ class TimelineCell: UITableViewCell {
     }
     
     func arrange3Images() {
-        
-        let iv = UIImageView(image: self.post?.imageThumbnails[0])
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        let iv2 = UIImageView(image: self.post?.imageThumbnails[1])
-        iv2.clipsToBounds = true
-        iv2.contentMode = .scaleAspectFill
-        iv2.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        let iv3 = UIImageView(image: self.post?.imageThumbnails[2])
-        iv3.clipsToBounds = true
-        iv3.contentMode = .scaleAspectFill
-        iv3.translatesAutoresizingMaskIntoConstraints = false
+        let iv = crateImageView(for: 0, post: self.post!)
+        let iv2 = crateImageView(for: 1, post: self.post!)
+        let iv3 = crateImageView(for: 2, post: self.post!)
         
         self.imageBox.addSubview(iv)
         self.imageBox.addSubview(iv2)
@@ -137,34 +112,36 @@ class TimelineCell: UITableViewCell {
         self.imageBox.addConstraints(constraints)
         self.lastImageBoxConstraints = constraints
     }
-}
-
-//load thumbnails from disk
-extension Post {
     
-    //load images
-    func loadThumbnails () {
+    //MARK: image views
+    func crateImageView(for imageIndex: Int, post: Post) -> UIImageView {
+        let filename = post.imageDataFilenames[imageIndex]
         
-        self.imageThumbnails = []
-        if let filename = self.imageDataFilenames.first,
-            let image = UIImage.loadImage(with: filename ){
-            self.imageThumbnails.append( image )
+        
+        let iv = UIImageView(image: UIImage())
+        iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFill
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        
+        let ivImage: Variable<UIImage?>
+        switch imageIndex {
+        case 0:
+            ivImage = image1
+        case 1:
+            ivImage = image2
+        default:
+            ivImage = image3
         }
         
-        if self.imageDataFilenames.count > 1 {
-            let filename = self.imageDataFilenames[1]
-            if let image = UIImage.loadImage(with: filename ) {
-                self.imageThumbnails.append(  image )
-                
-            }
-        }
+        ImageProvider.shared.loadImage(withFilename: filename)
+            .observeOn(self.serialScheduler)
+            .subscribe(onNext: { (maybeImage) in
+                ivImage.value = maybeImage
+            }).disposed(by: disposeBag)
+            
         
-        if self.imageDataFilenames.count > 2 {
-            let filename = self.imageDataFilenames[2]
-            if let image = UIImage.loadImage(with: filename ) {
-                self.imageThumbnails.append( image )
-            }
-        }
-        
+       ivImage.asDriver().bind(animated: iv.rx.animated.fade(duration: 0.5).image)
+            .disposed(by: disposeBag)
+        return iv
     }
 }
