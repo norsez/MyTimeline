@@ -64,6 +64,7 @@ class TimelineViewController: UITableViewController {
         var updatedItems = self.viewModel.posts
         updatedItems.insert(post, at: 0)
         self.viewModel.posts = updatedItems
+        self.tableView.reloadData()
         self.tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
     }
     
@@ -83,7 +84,7 @@ class TimelineViewController: UITableViewController {
             }
         }else if segue.identifier == "Compose" {
             if let ctrl = segue.destination as? ComposeViewController {
-                ctrl.viewModel.newPostCreated.asObservable().subscribe(onNext: { (post) in
+                ctrl.viewModel.newPostCreated.asDriver().drive(onNext: { (post) in
                     if let post = post {
                         self.onDidCreateNewPost(post)
                     }
