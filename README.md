@@ -4,7 +4,7 @@ by Norsez Orankijanan
 https://github.com/norsez
 
 ## Architecture
-`MVVM` with RxSwift
+Use `MVVM` with RxSwift on the app (except on the simplistic `PostViewConroller` screen to avoid overengineering.) 
 
 ### Model
 - `Post` represents posts in the timeline implemented as a `Realm` object.

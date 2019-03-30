@@ -8,7 +8,9 @@
 
 import UIKit
 import SKPhotoBrowser
-
+import RxSwift
+import RxCocoa
+import RxAnimated
 //MARK - view for a post
 class PostViewController: UITableViewController {
     
@@ -24,6 +26,7 @@ class PostViewController: UITableViewController {
     let CELL_BODY = "BodyCell"
     let CELL_IMAGE = "ImageCell"
     var post: Post? = nil
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +46,7 @@ class PostViewController: UITableViewController {
         case .body:
             return 1
         case .image:
-            return self.post?.imageThumbnails.count ?? 0
+            return self.post?.imageDataFilenames.count ?? 0
         }
     }
 
@@ -51,8 +54,12 @@ class PostViewController: UITableViewController {
         
         if Section.isImage(indexPath) {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.CELL_IMAGE, for: indexPath) as! PostImageCell
-            let image = self.post?.imageThumbnails[indexPath.row]
-            cell.postImageView.image = image
+
+            let imageFilename = self.post?.imageDataFilenames[indexPath.row] ?? ""
+            ImageProvider.shared.loadImage(withFilename: imageFilename)
+                .bind(animated: cell.postImageView.rx.image )
+                .disposed(by: self.disposeBag)
+            
             return cell
         }
         
@@ -77,10 +84,18 @@ extension PostViewController {
     func showPhoto(at indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PostImageCell
         let originImage = cell.imageView?.image ?? UIImage()
-        let photos = self.post?.imageThumbnails.compactMap({ (image) -> SKPhoto? in
-            return SKPhoto.photoWithImage(image)
-        })
-        let browser = SKPhotoBrowser(originImage: originImage, photos: photos ?? [], animatedFromView: cell)
+        
+        var filenames = [String]()
+        self.post!.imageDataFilenames.forEach { (s) in
+            filenames.append(s)
+        }
+        
+        let photos =  filenames.map { (filename) -> SKPhoto in
+            let image = ImageProvider.shared.imageCache.object(forKey: filename as NSString)
+            return SKPhoto.photoWithImage(image ?? UIImage())
+        }
+        
+        let browser = SKPhotoBrowser(originImage: originImage, photos: photos , animatedFromView: cell)
         browser.initializePageIndex(indexPath.row)
         self.present(browser, animated: true, completion: nil)
     }
