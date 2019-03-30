@@ -20,6 +20,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var textView: UITextView!
     @IBOutlet var composeButton: UIBarButtonItem!
     
+    @IBOutlet var placeholderLabel: UILabel!
     @IBOutlet var imageView1: UIImageView!
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView3: UIImageView!
@@ -88,6 +89,12 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: Reactive wiring
     func bindViewToViewModel() {
+        
+        self.viewModel.bodyText.asDriver()
+            .drive(onNext: { [weak self] (text) in
+                self?.placeholderLabel.isHidden = !(text?.isTrimmedEmpty ?? true)
+            }).disposed(by: disposeBag)
+        
         self.textView.rx.text.orEmpty
             .bind(to: self.viewModel.bodyText )
             .disposed(by: disposeBag)

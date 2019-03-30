@@ -156,14 +156,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-h0-SRe">
                                 <rect key="frame" x="246" y="216" width="113" height="115"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's on your mind?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-fz-vDM">
+                                <rect key="frame" x="24" y="88" width="132" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="0VX-lT-7Sn"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="8Zu-5d-NVe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gaD-fz-vDM" firstAttribute="top" secondItem="LVi-tu-1ro" secondAttribute="bottom" constant="24" id="6DG-Jt-3FV"/>
                             <constraint firstItem="gvU-XG-fdv" firstAttribute="width" secondItem="JPj-4S-d4R" secondAttribute="height" multiplier="113:128" id="6oI-bW-Mr5"/>
                             <constraint firstItem="wVJ-h0-SRe" firstAttribute="width" secondItem="gvU-XG-fdv" secondAttribute="width" id="DTx-Q4-cUe"/>
                             <constraint firstItem="LVi-tu-1ro" firstAttribute="leading" secondItem="cnN-ES-HOr" secondAttribute="leading" id="Dfu-tr-hhv"/>
                             <constraint firstItem="Zad-Tb-VIB" firstAttribute="leading" secondItem="gvU-XG-fdv" secondAttribute="trailing" constant="2" id="FHA-VW-SSy"/>
                             <constraint firstItem="Zad-Tb-VIB" firstAttribute="top" secondItem="JPj-4S-d4R" secondAttribute="bottom" constant="8" id="Hkq-ru-ZEt"/>
+                            <constraint firstItem="gaD-fz-vDM" firstAttribute="leading" secondItem="cnN-ES-HOr" secondAttribute="leading" constant="24" id="Iv8-8U-l8C"/>
                             <constraint firstItem="wVJ-h0-SRe" firstAttribute="top" secondItem="JPj-4S-d4R" secondAttribute="bottom" constant="8" id="JHQ-gj-sOo"/>
                             <constraint firstItem="gvU-XG-fdv" firstAttribute="height" secondItem="JPj-4S-d4R" secondAttribute="height" multiplier="0.9" id="LvB-cI-cU6"/>
                             <constraint firstItem="LVi-tu-1ro" firstAttribute="top" secondItem="cnN-ES-HOr" secondAttribute="top" id="Ohc-uW-OEU"/>
@@ -189,6 +201,7 @@
                         <outlet property="imageView1" destination="gvU-XG-fdv" id="0hw-JD-jSp"/>
                         <outlet property="imageView2" destination="Zad-Tb-VIB" id="yxU-L7-w9l"/>
                         <outlet property="imageView3" destination="wVJ-h0-SRe" id="csH-eD-O8u"/>
+                        <outlet property="placeholderLabel" destination="gaD-fz-vDM" id="iXV-BQ-D5N"/>
                         <outlet property="textView" destination="JPj-4S-d4R" id="dfV-2b-0i3"/>
                     </connections>
                 </viewController>
