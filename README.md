@@ -1,7 +1,6 @@
 #  MyTimeLine
 
-by Norsez Orankijanan
-https://github.com/norsez
+An example iOS MVVM app with  RxSwift with Realm.
 
 ## Architecture
 Use `MVVM` with RxSwift on the app (except on the simplistic `PostViewConroller` screen to avoid overengineering.) 
@@ -66,8 +65,8 @@ The `XCUITest` is used to test the UI interactions implying correctness of
 the app's navigation and view mode's reactive wiring. Each time UI test is runned, 
 the database resets to its _test data_ state. The test automation recorded is 
 strictly dependent on the _test data_ created by the `SeedData` class. 
-- `MyTimelineUITests` tests each part of the navigations defined in the project mock up, 
-the 3 screens, search and full image viewer. 
+- `MyTimelineUITests` tests each part of the navigation of 
+the main 3 screens, search and full image viewer. 
 
 
 
