@@ -2,11 +2,15 @@
 
 An example iOS MVVM app with  RxSwift with Realm.
 
+<img src="https://user-images.githubusercontent.com/1758101/56849109-c5328780-691a-11e9-8870-1bfb06823530.png" width="100">
+
+
 ## Architecture
 Use `MVVM` with RxSwift on the app (except on the simplistic `PostViewConroller` screen to avoid overengineering.) 
 
 ### Model
 - `Post` represents posts in the timeline implemented as a `Realm` object.
+<img src="https://user-images.githubusercontent.com/1758101/56849119-d5e2fd80-691a-11e9-917f-3e598bf56e3b.png" width="100">
 
 ### ViewModel
 
@@ -15,17 +19,20 @@ These view models use `RxSwift` to update their associated views. The pattern is
 - Their callback are `Observable`s. The view can bind to them to receive the view model method's responses. 
 
 #### `TimelineViewModel`
+<img src="https://user-images.githubusercontent.com/1758101/56849114-cf548600-691a-11e9-809b-da53a6d67406.png" width="100">
 It presents the view model of the first screen, `Timeline`. It keeps a list of `[Post]` that 
 are displayed in the view's `UITableView`, and another list of  `[Post]` for the `UISearchController`.
 
 
 ####  `ComposeViewModel`
+<img src="https://user-images.githubusercontent.com/1758101/56849125-e4c9b000-691a-11e9-9923-3fe5c4742f0d.png" width="100">
 It presents the view model of the `Compose` screen. It keeps a `Post` for the view's input form,
 which then will be saved to the `Realm` database once the user tap `Create`.
 
 
 
 ### View
+<img src="https://user-images.githubusercontent.com/1758101/56849122-df6c6580-691a-11e9-9f18-847a464d5544.png" width="100">
 For each screen, the views are the SDK's `UIViewController`s
 This app has 3 main screens: `TimelineViewController`, `ComposeViewController` and 
 `PostViewController`. Each of first 2 screens has their associated `ViewModel`. The last 
